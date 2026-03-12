@@ -14,7 +14,7 @@ export function EventCountdown({ nextEvent }: EventCountdownProps) {
     return () => clearInterval(timer);
   }, []);
 
-  if (!nextEvent) return null;
+  if (!nextEvent) return <div className="text-white">No next event</div>;
 
   const diffMs = nextEvent.time.getTime() - now.getTime();
   if (diffMs < 0) return null; // Event passed, hook will recalculate soon
