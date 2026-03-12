@@ -2,6 +2,7 @@ import { useLocation } from "wouter";
 import { useCitySearch } from "@/hooks/use-location";
 import { SunDetailsCard } from "@/components/SunDetailsCard";
 import { MoonDetailsCard } from "@/components/MoonDetailsCard";
+import { useAstroData } from "@/hooks/use-astro";
 
 export default function CityPage() {
   const [location] = useLocation();
@@ -24,6 +25,8 @@ export default function CityPage() {
 
   const cityData = data[0];
 
+  const astroData = useAstroData(cityData.latitude, cityData.longitude, new Date());
+
   document.title = `Sunset Time in ${cityData.name} Today`;
 
   return (
@@ -34,8 +37,8 @@ export default function CityPage() {
       </h1>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-4xl">
-        <SunDetailsCard latitude={cityData.latitude} longitude={cityData.longitude} />
-        <MoonDetailsCard latitude={cityData.latitude} longitude={cityData.longitude} />
+        <SunDetailsCard data={astroData} />
+        <MoonDetailsCard data={astroData} />
       </div>
 
       <div className="text-sm text-white/60 text-center">
