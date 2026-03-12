@@ -28,7 +28,23 @@ export default function CityPage() {
 
   const astroData = useAstroData(cityData.latitude, cityData.longitude, new Date());
 
-  document.title = `Sunset Time in ${cityData.name} Today`;
+  const pageType = location.split("/")[1];
+
+  let title = "";
+
+  if (pageType === "sunset") {
+    title = `Sunset Time in ${cityData.name} Today (Golden Hour, Sunrise & Moon Phase)`;
+  }
+
+  if (pageType === "moon") {
+    title = `Moon Phase in ${cityData.name} Today (Moonrise & Moonset)`;
+  }
+
+  if (pageType === "golden-hour") {
+    title = `Golden Hour in ${cityData.name} Today (Sunrise & Sunset Times)`;
+  }
+
+  document.title = title;
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center text-white gap-10 px-4">
