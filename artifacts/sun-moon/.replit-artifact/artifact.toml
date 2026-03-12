@@ -1,0 +1,31 @@
+kind = "web"
+previewPath = "/"
+title = "Sunset & Moon"
+version = "1.0.0"
+id = "artifacts/sun-moon"
+router = "path"
+
+[[integratedSkills]]
+name = "react-vite"
+version = "1.0.0"
+
+[[services]]
+localPort = 22652
+name = "web"
+paths = ["/"]
+
+[services.development]
+run = "pnpm --filter @workspace/sun-moon run dev"
+
+[services.env]
+PORT = "22652"
+BASE_PATH = "/"
+
+[services.production]
+build = ["pnpm", "--filter", "@workspace/sun-moon", "run", "build"]
+publicDir = "artifacts/sun-moon/dist/public"
+serve = "static"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"

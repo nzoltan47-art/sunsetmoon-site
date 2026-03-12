@@ -1,0 +1,21 @@
+packages:
+  "suncalc": "Astronomical calculations for sun and moon phases"
+  "@types/suncalc": "TypeScript definitions for suncalc"
+  "date-fns": "Formatting and manipulating dates beautifully"
+  "framer-motion": "Smooth animations and transitions for the sky background"
+  "lucide-react": "Beautiful iconography for UI elements"
+  "clsx": "Utility for constructing className strings conditionally"
+  "tailwind-merge": "Utility function to efficiently merge Tailwind CSS classes"
+  "zod": "Schema validation for geocoding API responses"
+
+images:
+  - path: "artifacts/sun-moon/public/images/celestial-ornament.png"
+    description: "Minimalist glowing celestial gold compass or astrolabe ornament, transparent background, subtle glow"
+    aspect_ratio: "1:1"
+  - path: "artifacts/sun-moon/public/images/moon-texture.png"
+    description: "Detailed highly realistic monochrome moon surface texture, transparent background"
+    aspect_ratio: "1:1"
+
+notes:
+  - App is entirely frontend-driven utilizing the browser's Geolocation API and Open-Meteo's public geocoding API.
+  - No backend auth or database required.
