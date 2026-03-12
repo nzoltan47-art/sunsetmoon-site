@@ -11,9 +11,11 @@ export default function CityPage() {
   const pageType = pathParts[1];
   const citySlug = pathParts[2];
 
-  const city = citySlug?.replace("-", " ");
+  const city = citySlug?.split("-").join(" ");
 
-  const { data, isLoading } = useCitySearch(city || "");
+  const formattedCity = city?.charAt(0).toUpperCase() + city?.slice(1);
+
+  const { data, isLoading } = useCitySearch(formattedCity || "");
 
   if (!city) {
     return <div className="text-white text-center mt-20">City not found</div>;
@@ -32,9 +34,9 @@ export default function CityPage() {
   const astroData = useAstroData(
     cityData.latitude,
     cityData.longitude,
-    new Date()
+    new Date(),
   );
-  
+
   if (!astroData) {
     return <div className="text-white text-center mt-20">Loading...</div>;
   }
@@ -57,7 +59,6 @@ export default function CityPage() {
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center text-white gap-10 px-4">
-
       <h1 className="text-4xl font-bold text-center capitalize">
         {pageType.replace("-", " ")} in {cityData.name} Today
       </h1>
@@ -70,14 +71,26 @@ export default function CityPage() {
       <div className="text-sm text-white/60 text-center">
         Popular sunset cities:
         <div className="flex gap-4 mt-3 justify-center flex-wrap">
-          <a href="/sunset/london" className="text-white hover:text-primary">London</a>
-          <a href="/sunset/paris" className="text-white hover:text-primary">Paris</a>
-          <a href="/sunset/new-york" className="text-white hover:text-primary">New York</a>
-          <a href="/sunset/tokyo" className="text-white hover:text-primary">Tokyo</a>
-          <a href="/sunset/los-angeles" className="text-white hover:text-primary">Los Angeles</a>
+          <a href="/sunset/london" className="text-white hover:text-primary">
+            London
+          </a>
+          <a href="/sunset/paris" className="text-white hover:text-primary">
+            Paris
+          </a>
+          <a href="/sunset/new-york" className="text-white hover:text-primary">
+            New York
+          </a>
+          <a href="/sunset/tokyo" className="text-white hover:text-primary">
+            Tokyo
+          </a>
+          <a
+            href="/sunset/los-angeles"
+            className="text-white hover:text-primary"
+          >
+            Los Angeles
+          </a>
         </div>
       </div>
-
     </div>
   );
 }
