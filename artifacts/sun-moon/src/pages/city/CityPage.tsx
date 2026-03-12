@@ -34,6 +34,10 @@ export default function CityPage() {
     cityData.longitude,
     new Date()
   );
+  
+  if (!astroData) {
+    return <div className="text-white text-center mt-20">Loading...</div>;
+  }
 
   let title = "";
 
