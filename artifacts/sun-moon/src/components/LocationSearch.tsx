@@ -1,7 +1,7 @@
-import React, { useState, useRef, useEffect } from 'react';
-import { Search, MapPin, Loader2, X } from 'lucide-react';
-import { useCitySearch, AppLocation } from '@/hooks/use-location';
-import { GlassButton } from './ui/glass-button';
+import React, { useState, useRef, useEffect } from "react";
+import { Search, MapPin, Loader2, X } from "lucide-react";
+import { useCitySearch, AppLocation } from "@/hooks/use-location";
+import { GlassButton } from "./ui/glass-button";
 
 interface LocationSearchProps {
   onSelect: (location: AppLocation) => void;
@@ -9,16 +9,23 @@ interface LocationSearchProps {
   loadingGPS: boolean;
 }
 
-export function LocationSearch({ onSelect, onUseGPS, loadingGPS }: LocationSearchProps) {
-  const [query, setQuery] = useState('');
+export function LocationSearch({
+  onSelect,
+  onUseGPS,
+  loadingGPS,
+}: LocationSearchProps) {
+  const [query, setQuery] = useState("");
   const [isOpen, setIsOpen] = useState(false);
   const wrapperRef = useRef<HTMLDivElement>(null);
-  
+
   const { data: results, isLoading } = useCitySearch(query);
 
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
-      if (wrapperRef.current && !wrapperRef.current.contains(event.target as Node)) {
+      if (
+        wrapperRef.current &&
+        !wrapperRef.current.contains(event.target as Node)
+      ) {
         setIsOpen(false);
       }
     }
@@ -42,17 +49,30 @@ export function LocationSearch({ onSelect, onUseGPS, loadingGPS }: LocationSearc
           onFocus={() => setIsOpen(true)}
         />
         {query && (
-          <button 
-            onClick={() => { setQuery(''); setIsOpen(false); }}
+          <button
+            onClick={() => {
+              setQuery("");
+              setIsOpen(false);
+            }}
             className="absolute right-14 text-white/50 hover:text-white p-1"
           >
             <X className="w-4 h-4" />
           </button>
         )}
         <div className="absolute right-2">
-           <GlassButton size="icon" variant="ghost" onClick={onUseGPS} disabled={loadingGPS} title="Use Current Location">
-             {loadingGPS ? <Loader2 className="w-5 h-5 animate-spin text-primary" /> : <MapPin className="w-5 h-5 text-white/80" />}
-           </GlassButton>
+          <GlassButton
+            size="icon"
+            variant="ghost"
+            onClick={onUseGPS}
+            disabled={loadingGPS}
+            title="Use Current Location"
+          >
+            {loadingGPS ? (
+              <Loader2 className="w-5 h-5 animate-spin text-primary" />
+            ) : (
+              <MapPin className="w-5 h-5 text-white/80" />
+            )}
+          </GlassButton>
         </div>
       </div>
 
@@ -67,20 +87,22 @@ export function LocationSearch({ onSelect, onUseGPS, loadingGPS }: LocationSearc
               {results.map((item) => (
                 <li key={item.id}>
                   <button
-                    className="w-full text-left px-4 py-3 hover:bg-white/10 text-white transition-colors flex flex-col"
+                    className="w-full text-left px-4 py-4 hover:bg-white/10 text-white transition-colors flex flex-col cursor-pointer"
+                    style={{ display: "block" }}
                     onClick={() => {
                       onSelect({
                         latitude: item.latitude,
                         longitude: item.longitude,
-                        name: `${item.name}${item.admin1 ? `, ${item.admin1}` : ''}${item.country ? `, ${item.country}` : ''}`
+                        name: `${item.name}${item.admin1 ? `, ${item.admin1}` : ""}${item.country ? `, ${item.country}` : ""}`,
                       });
                       setIsOpen(false);
-                      setQuery('');
+                      setQuery("");
                     }}
                   >
                     <span className="font-medium text-base">{item.name}</span>
                     <span className="text-xs text-white/50">
-                      {item.admin1 ? `${item.admin1}, ` : ''}{item.country}
+                      {item.admin1 ? `${item.admin1}, ` : ""}
+                      {item.country}
                     </span>
                   </button>
                 </li>
