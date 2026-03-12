@@ -7,7 +7,10 @@ import { useAstroData } from "@/hooks/use-astro";
 export default function CityPage() {
   const [location] = useLocation();
 
-  const citySlug = location.split("/")[2];
+  const pathParts = location.split("/");
+  const pageType = pathParts[1];
+  const citySlug = pathParts[2];
+
   const city = citySlug?.replace("-", " ");
 
   const { data, isLoading } = useCitySearch(city || "");
@@ -26,9 +29,11 @@ export default function CityPage() {
 
   const cityData = data[0];
 
-  const astroData = useAstroData(cityData.latitude, cityData.longitude, new Date());
-
-  const pageType = location.split("/")[1];
+  const astroData = useAstroData(
+    cityData.latitude,
+    cityData.longitude,
+    new Date()
+  );
 
   let title = "";
 
@@ -49,8 +54,8 @@ export default function CityPage() {
   return (
     <div className="min-h-screen flex flex-col items-center justify-center text-white gap-10 px-4">
 
-      <h1 className="text-4xl font-bold text-center">
-        Sunset & Moon Info for {cityData.name}
+      <h1 className="text-4xl font-bold text-center capitalize">
+        {pageType.replace("-", " ")} in {cityData.name} Today
       </h1>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-4xl">
