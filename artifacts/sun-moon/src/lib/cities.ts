@@ -1,0 +1,17 @@
+export const cities = [
+  "london",
+  "paris",
+  "new-york",
+  "los-angeles",
+  "tokyo",
+  "berlin",
+  "madrid",
+  "rome",
+  "budapest",
+  "bratislava",
+  "vienna",
+  "prague",
+  "toronto",
+  "sydney",
+  "dubai",
+];

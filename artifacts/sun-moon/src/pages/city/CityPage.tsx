@@ -32,6 +32,16 @@ export default function CityPage() {
 
       <p>Latitude: {cityData.latitude}</p>
       <p>Longitude: {cityData.longitude}</p>
+      <div className="mt-10 text-sm text-white/70">
+        Popular sunset cities:
+        <div className="flex gap-4 mt-3 flex-wrap">
+          <a href="/sunset/london">London</a>
+          <a href="/sunset/paris">Paris</a>
+          <a href="/sunset/new-york">New York</a>
+          <a href="/sunset/tokyo">Tokyo</a>
+          <a href="/sunset/los-angeles">Los Angeles</a>
+        </div>
+      </div>
     </div>
   );
 }

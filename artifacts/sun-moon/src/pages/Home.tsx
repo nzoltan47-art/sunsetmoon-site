@@ -125,6 +125,12 @@ export default function Home() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 mt-auto">
               <SunDetailsCard data={astroData} />
               <MoonDetailsCard data={astroData} />
+        
+            </div>
+            <div className="mt-10 text-center text-white/60 text-sm">
+              <a href="/cities" className="underline hover:text-white transition">
+                Browse Sunset Times by City
+              </a>
             </div>
             
           </div>
