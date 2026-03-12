@@ -69,16 +69,31 @@ export function useAstroData(lat: number | undefined, lng: number | undefined, d
 
     // Calculate next event
     const now = new Date();
-    const events = [
+
+    const todayEvents = [
       { name: 'Dawn', time: sunTimes.dawn },
       { name: 'Sunrise', time: sunTimes.sunrise },
       { name: 'Golden Hour', time: sunTimes.goldenHour },
       { name: 'Sunset', time: sunTimes.sunset },
       { name: 'Dusk', time: sunTimes.dusk },
-    ].filter(e => e.time && e.time.getTime() > now.getTime())
-     .sort((a, b) => a.time.getTime() - b.time.getTime());
+    ]
+    .filter(e => e.time && e.time.getTime() > now.getTime())
+    .sort((a, b) => a.time.getTime() - b.time.getTime());
 
-    const nextEvent = events.length > 0 ? events[0] : null;
+    let nextEvent = todayEvents.length > 0 ? todayEvents[0] : null;
+
+    // If all events today have passed → countdown to tomorrow's dawn
+    if (!nextEvent) {
+      const tomorrow = new Date(date);
+      tomorrow.setDate(tomorrow.getDate() + 1);
+
+      const tomorrowSun = SunCalc.getTimes(tomorrow, lat, lng);
+
+      nextEvent = {
+        name: 'Dawn',
+        time: tomorrowSun.dawn
+      };
+    }
     const currentPhase = getCurrentSkyPhase(now, sunTimes);
 
     return {

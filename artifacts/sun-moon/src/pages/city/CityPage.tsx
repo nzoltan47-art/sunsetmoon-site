@@ -7,7 +7,8 @@ import { useAstroData } from "@/hooks/use-astro";
 export default function CityPage() {
   const [location] = useLocation();
 
-  const city = location.split("/")[2];
+  const citySlug = location.split("/")[2];
+  const city = citySlug?.replace("-", " ");
 
   const { data, isLoading } = useCitySearch(city || "");
 
@@ -44,11 +45,11 @@ export default function CityPage() {
       <div className="text-sm text-white/60 text-center">
         Popular sunset cities:
         <div className="flex gap-4 mt-3 justify-center flex-wrap">
-          <a href="/sunset/london">London</a>
-          <a href="/sunset/paris">Paris</a>
-          <a href="/sunset/new-york">New York</a>
-          <a href="/sunset/tokyo">Tokyo</a>
-          <a href="/sunset/los-angeles">Los Angeles</a>
+          <a href="/sunset/london" className="text-white hover:text-primary">London</a>
+          <a href="/sunset/paris" className="text-white hover:text-primary">Paris</a>
+          <a href="/sunset/new-york" className="text-white hover:text-primary">New York</a>
+          <a href="/sunset/tokyo" className="text-white hover:text-primary">Tokyo</a>
+          <a href="/sunset/los-angeles" className="text-white hover:text-primary">Los Angeles</a>
         </div>
       </div>
 
