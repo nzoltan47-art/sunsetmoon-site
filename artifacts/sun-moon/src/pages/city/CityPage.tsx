@@ -1,11 +1,12 @@
-import { useParams } from "react-router-dom";
+import { useRoute } from "wouter";
 import { useCitySearch } from "@/hooks/use-location";
 import { SunDetailsCard } from "@/components/SunDetailsCard";
 import { MoonDetailsCard } from "@/components/MoonDetailsCard";
 import { Helmet } from "react-helmet";
 
 export default function CityPage() {
-  const { city } = useParams();
+  const [, params] = useRoute("/sunset/:city");
+  const city = params?.city;
 
   const { data } = useCitySearch(city || "");
 
@@ -31,4 +32,4 @@ export default function CityPage() {
     name="description"
     content={`Check today's sunset, sunrise, golden hour and moon phase in ${location.name}.`}
   />
-</Helmet>
+</Helmet>;
