@@ -11,12 +11,27 @@ export default function CityPage() {
   const pageType = pathParts[1];
   const citySlug = pathParts[2];
 
+  // convert slug → readable city
   const city = citySlug?.split("-").join(" ");
 
-  const formattedCity = city?.charAt(0).toUpperCase() + city?.slice(1);
+  const formattedCity = city
+    ?.split(" ")
+    .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
+    .join(" ");
 
+  // city search
   const { data, isLoading } = useCitySearch(formattedCity || "");
 
+  const cityData = data?.[0];
+
+  // astro calculations
+  const astroData = useAstroData(
+    cityData?.latitude,
+    cityData?.longitude,
+    new Date(),
+  );
+
+  // safe loading states
   if (!city) {
     return <div className="text-white text-center mt-20">City not found</div>;
   }
@@ -25,22 +40,15 @@ export default function CityPage() {
     return <div className="text-white text-center mt-20">Loading...</div>;
   }
 
-  if (!data || data.length === 0) {
+  if (!cityData) {
     return <div className="text-white text-center mt-20">City not found</div>;
   }
-
-  const cityData = data[0];
-
-  const astroData = useAstroData(
-    cityData.latitude,
-    cityData.longitude,
-    new Date(),
-  );
 
   if (!astroData) {
     return <div className="text-white text-center mt-20">Loading...</div>;
   }
 
+  // SEO titles
   let title = "";
 
   if (pageType === "sunset") {
@@ -74,15 +82,19 @@ export default function CityPage() {
           <a href="/sunset/london" className="text-white hover:text-primary">
             London
           </a>
+
           <a href="/sunset/paris" className="text-white hover:text-primary">
             Paris
           </a>
+
           <a href="/sunset/new-york" className="text-white hover:text-primary">
             New York
           </a>
+
           <a href="/sunset/tokyo" className="text-white hover:text-primary">
             Tokyo
           </a>
+
           <a
             href="/sunset/los-angeles"
             className="text-white hover:text-primary"
