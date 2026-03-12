@@ -77,7 +77,7 @@ export function LocationSearch({
       </div>
 
       {isOpen && query.length >= 2 && (
-        <div className="absolute top-full left-0 right-0 mt-2 bg-slate-900/90 backdrop-blur-2xl border border-white/10 rounded-2xl shadow-2xl overflow-hidden">
+        <div className="absolute top-full left-0 right-0 mt-2 bg-slate-900/90 backdrop-blur-2xl border border-white/10 rounded-2xl shadow-2xl overflow-visible z-[9999]">
           {isLoading ? (
             <div className="p-4 flex items-center justify-center text-white/50">
               <Loader2 className="w-5 h-5 animate-spin mr-2" /> Searching...
@@ -87,7 +87,7 @@ export function LocationSearch({
               {results.map((item) => (
                 <li key={item.id}>
                   <button
-                    className="w-full text-left px-4 py-4 hover:bg-white/10 text-white transition-colors flex flex-col cursor-pointer"
+                    className="w-full text-left px-4 py-4 hover:bg-white/10 text-white transition-colors flex flex-col cursor-pointer rounded-lg"
                     style={{ display: "block" }}
                     onClick={() => {
                       onSelect({
