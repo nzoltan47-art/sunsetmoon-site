@@ -65,6 +65,15 @@ export default function CityPage() {
 
   document.title = title;
 
+  const meta = document.querySelector('meta[name="description"]');
+
+  if (meta) {
+    meta.setAttribute(
+      "content",
+      `Check today's sunset time, golden hour, sunrise and moon phase in ${cityData.name}.`
+    );
+  }
+
   return (
     <div className="min-h-screen flex flex-col items-center justify-center text-white gap-10 px-4">
       <h1 className="text-4xl font-bold text-center capitalize">
