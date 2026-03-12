@@ -2,7 +2,6 @@ import { useRoute } from "wouter";
 import { useCitySearch } from "@/hooks/use-location";
 import { SunDetailsCard } from "@/components/SunDetailsCard";
 import { MoonDetailsCard } from "@/components/MoonDetailsCard";
-import { Helmet } from "react-helmet";
 
 export default function CityPage() {
   const [, params] = useRoute("/sunset/:city");
@@ -25,11 +24,3 @@ export default function CityPage() {
     </div>
   );
 }
-
-<Helmet>
-  <title>Sunset Time in {location.name} Today</title>
-  <meta
-    name="description"
-    content={`Check today's sunset, sunrise, golden hour and moon phase in ${location.name}.`}
-  />
-</Helmet>;
