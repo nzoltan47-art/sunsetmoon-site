@@ -70,7 +70,7 @@ export default function CityPage() {
   if (meta) {
     meta.setAttribute(
       "content",
-      `Check today's sunset time, golden hour, sunrise and moon phase in ${cityData.name}.`
+      `Check today's sunset time, golden hour, sunrise and moon phase in ${cityData.name}.`,
     );
   }
 
@@ -79,6 +79,25 @@ export default function CityPage() {
       <h1 className="text-4xl font-bold text-center capitalize">
         {pageType.replace("-", " ")} in {cityData.name} Today
       </h1>
+
+      <p className="text-white/70 max-w-2xl text-center leading-relaxed">
+        The sunset time in {cityData.name} today is{" "}
+        {astroData.sun.sunset.toLocaleTimeString([], {
+          hour: "2-digit",
+          minute: "2-digit",
+        })}
+        . Sunrise occurs at{" "}
+        {astroData.sun.sunrise.toLocaleTimeString([], {
+          hour: "2-digit",
+          minute: "2-digit",
+        })}
+        and golden hour begins at{" "}
+        {astroData.sun.goldenHour.toLocaleTimeString([], {
+          hour: "2-digit",
+          minute: "2-digit",
+        })}
+        . The current moon phase is {astroData.moon.phaseName}.
+      </p>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-4xl">
         <SunDetailsCard data={astroData} />
