@@ -35,7 +35,12 @@ for (let i = 0; i < urls.length; i += CHUNK_SIZE) {
 
   const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${chunk.map(url => `<url><loc>${url}</loc></url>`).join("\n")}
+${chunk
+  .map(
+    url =>
+      `<url><loc>${url}</loc><lastmod>${new Date().toISOString()}</lastmod></url>`
+  )
+  .join("\n")}
 </urlset>`;
 
   fs.writeFileSync(path.join(root, "public", fileName), sitemap);
