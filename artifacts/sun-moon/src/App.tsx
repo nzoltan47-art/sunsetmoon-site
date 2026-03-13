@@ -6,6 +6,7 @@ import Home from "@/pages/Home";
 import NotFound from "@/pages/not-found";
 import CityPage from "@/pages/city/CityPage";
 import Cities from "@/pages/Cities";
+import Country from "@/pages/Country";
 import About from "@/pages/About";
 import Privacy from "@/pages/Privacy";
 import Contact from "@/pages/Contact";
