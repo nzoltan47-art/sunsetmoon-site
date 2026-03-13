@@ -80,6 +80,16 @@ export default function CityPage() {
         {pageType.replace("-", " ")} in {cityData.name} Today
       </h1>
 
+      <p className="text-sm text-white/60 text-center">
+        Part of{" "}
+        <a
+          href={`/country/${cityData.country.toLowerCase().replace(/ /g, "-")}`}
+          className="hover:underline"
+        >
+          {cityData.country}
+        </a>
+      </p>
+
       <p className="text-white/70 max-w-2xl text-center leading-relaxed">
         The sunset time in {cityData.name} today is{" "}
         {astroData.sun.sunset.toLocaleTimeString([], {
