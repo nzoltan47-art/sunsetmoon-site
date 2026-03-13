@@ -49,7 +49,18 @@ function App() {
       <TooltipProvider>
         <WouterRouter base={import.meta.env.BASE_URL.replace(/\/$/, "")}>
           <Router />
+
+          <footer className="text-center text-white/60 text-sm py-8 mt-20">
+            <div className="flex justify-center gap-6 flex-wrap">
+              <a href="/about" className="hover:text-white">About</a>
+              <a href="/privacy" className="hover:text-white">Privacy</a>
+              <a href="/terms" className="hover:text-white">Terms</a>
+              <a href="/contact" className="hover:text-white">Contact</a>
+            </div>
+          </footer>
+
         </WouterRouter>
+
         <Toaster />
       </TooltipProvider>
     </QueryClientProvider>
