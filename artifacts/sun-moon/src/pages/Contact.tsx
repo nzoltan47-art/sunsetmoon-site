@@ -9,7 +9,7 @@ export default function Contact() {
       </p>
 
       <p className="mb-4 text-white/80 leading-relaxed">
-        Email: <span className="text-primary">contact@sunsetmoon.today</span>
+        Email: <span className="text-primary">support@sunsetmoon.today</span>
       </p>
 
       <p className="text-white/80 leading-relaxed">
