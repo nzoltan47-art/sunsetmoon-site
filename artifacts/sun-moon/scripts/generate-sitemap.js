@@ -2,13 +2,11 @@ import fs from "fs";
 import path from "path";
 
 const baseUrl = "https://sunsetmoon.today";
-
-// Resolve project root
 const root = process.cwd();
 
-// Load cities JSON
-const citiesPath = path.join(root, "src", "data", "cities.json");
-const cities = JSON.parse(fs.readFileSync(citiesPath, "utf-8"));
+const cities = JSON.parse(
+  fs.readFileSync(path.join(root, "src", "data", "cities.json"), "utf8")
+);
 
 const staticPages = [
   "",
@@ -20,7 +18,7 @@ const staticPages = [
 ];
 
 const urls = [
-  ...staticPages.map(page => `${baseUrl}${page}`),
+  ...staticPages.map(p => `${baseUrl}${p}`),
   ...cities.flatMap(city => [
     `${baseUrl}/sunset/${city.slug}`,
     `${baseUrl}/moon/${city.slug}`,
@@ -28,13 +26,29 @@ const urls = [
   ])
 ];
 
-const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
+const CHUNK_SIZE = 50000;
+const sitemapFiles = [];
+
+for (let i = 0; i < urls.length; i += CHUNK_SIZE) {
+  const chunk = urls.slice(i, i + CHUNK_SIZE);
+  const fileName = `sitemap-${Math.floor(i / CHUNK_SIZE) + 1}.xml`;
+
+  const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${urls.map(url => `<url><loc>${url}</loc></url>`).join("\n")}
+${chunk.map(url => `<url><loc>${url}</loc></url>`).join("\n")}
 </urlset>`;
 
-// Write sitemap
-const sitemapPath = path.join(root, "public", "sitemap.xml");
-fs.writeFileSync(sitemapPath, sitemap);
+  fs.writeFileSync(path.join(root, "public", fileName), sitemap);
+  sitemapFiles.push(fileName);
+}
 
-console.log("Sitemap generated with", urls.length, "URLs");
+const sitemapIndex = `<?xml version="1.0" encoding="UTF-8"?>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${sitemapFiles
+  .map(file => `<sitemap><loc>${baseUrl}/${file}</loc></sitemap>`)
+  .join("\n")}
+</sitemapindex>`;
+
+fs.writeFileSync(path.join(root, "public", "sitemap.xml"), sitemapIndex);
+
+console.log("Generated", sitemapFiles.length, "sitemaps");
