@@ -26,7 +26,7 @@ const urls = [
   ])
 ];
 
-const CHUNK_SIZE = 50000;
+const CHUNK_SIZE = 15000;
 const sitemapFiles = [];
 
 for (let i = 0; i < urls.length; i += CHUNK_SIZE) {
