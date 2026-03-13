@@ -3,6 +3,9 @@ import { cities } from "@/lib/cities";
 export default function Cities() {
   const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
 
+  // Prevent rendering all 17k cities on the page
+  const displayCities = cities.slice(0, 3000);
+
   return (
     <div className="min-h-screen text-white p-10 max-w-6xl mx-auto">
 
@@ -26,7 +29,7 @@ export default function Cities() {
       {/* Alphabet sections */}
       {alphabet.map((letter) => {
 
-        const filteredCities = cities.filter((city) =>
+        const filteredCities = displayCities.filter((city) =>
           city.name.toUpperCase().startsWith(letter)
         );
 
