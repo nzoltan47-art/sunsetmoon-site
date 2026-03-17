@@ -9,7 +9,6 @@ import { generateDescription } from "@/lib/generateDescription";
 export default function CityPage() {
   const [location] = useLocation();
 
-  // ✅ SAFE parsing
   const parts = location.split("/").filter(Boolean);
   const pageType = parts[0];
   const citySlug = parts[1];
@@ -28,13 +27,16 @@ export default function CityPage() {
   const { data, isLoading } = useCitySearch(formattedCity);
   const cityData = data?.[0];
 
+  // ✅ FIX: stable date (no React crash)
+  const today = new Date();
+  today.setHours(12, 0, 0, 0);
+
   const astroData = useAstroData(
     cityData?.latitude,
     cityData?.longitude,
-    new Date()
+    today
   );
 
-  // ✅ Loading states FIRST (important for hooks stability)
   if (isLoading) {
     return <div className="text-white text-center mt-20">Loading...</div>;
   }
@@ -47,21 +49,18 @@ export default function CityPage() {
     return <div className="text-white text-center mt-20">Loading...</div>;
   }
 
-  // ✅ Now it's SAFE to compute everything
-
   let title = "";
 
   if (pageType === "sunset") {
-    title = `Sunset Time in ${cityData.name} Today (Golden Hour, Sunrise & Moon Phase)`;
+    title = `Sunset Time in ${cityData.name} Today`;
   } else if (pageType === "moon") {
-    title = `Moon Phase in ${cityData.name} Today (Moonrise & Moonset)`;
+    title = `Moon Phase in ${cityData.name} Today`;
   } else if (pageType === "golden-hour") {
-    title = `Golden Hour in ${cityData.name} Today (Sunrise & Sunset Times)`;
+    title = `Golden Hour in ${cityData.name} Today`;
   } else {
     title = `${cityData.name} Astronomical Data`;
   }
 
-  // ✅ SAFE description (no crashes possible)
   let description = "";
 
   try {
@@ -80,7 +79,6 @@ export default function CityPage() {
 
   const canonicalUrl = `https://sunsetmoon.today/${pageType}/${citySlug}`;
 
-  // ✅ STABLE useEffect (no conditional hook issues)
   useEffect(() => {
     if (!title || !description || !canonicalUrl) return;
 
@@ -108,50 +106,13 @@ export default function CityPage() {
         {pageType.replace("-", " ")} in {cityData.name} Today
       </h1>
 
-      <p className="text-sm text-white/60 text-center">
-        Part of{" "}
-        <a
-          href={`/country/${cityData.country?.toLowerCase().replace(/ /g, "-")}`}
-          className="hover:underline"
-        >
-          {cityData.country}
-        </a>
-      </p>
-
-      {/* ✅ SEO TEXT */}
-      <p className="text-white/70 max-w-2xl text-center leading-relaxed">
+      <p className="text-white/70 max-w-2xl text-center">
         {description}
-      </p>
-
-      {/* ✅ DATA */}
-      <p className="text-white/60 text-center">
-        Today in {cityData.name}: Sunset at{" "}
-        {astroData.sun.sunset.toLocaleTimeString([], {
-          hour: "2-digit",
-          minute: "2-digit",
-        })}
-        , Sunrise at{" "}
-        {astroData.sun.sunrise.toLocaleTimeString([], {
-          hour: "2-digit",
-          minute: "2-digit",
-        })}
-        .
       </p>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-4xl">
         <SunDetailsCard data={astroData} />
         <MoonDetailsCard data={astroData} />
-      </div>
-
-      <div className="text-sm text-white/60 text-center">
-        Popular sunset cities:
-        <div className="flex gap-4 mt-3 justify-center flex-wrap">
-          <a href="/sunset/london" className="text-white hover:text-primary">London</a>
-          <a href="/sunset/paris" className="text-white hover:text-primary">Paris</a>
-          <a href="/sunset/new-york" className="text-white hover:text-primary">New York</a>
-          <a href="/sunset/tokyo" className="text-white hover:text-primary">Tokyo</a>
-          <a href="/sunset/los-angeles" className="text-white hover:text-primary">Los Angeles</a>
-        </div>
       </div>
 
     </div>
