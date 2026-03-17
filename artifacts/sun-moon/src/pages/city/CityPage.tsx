@@ -9,10 +9,11 @@ import { generateDescription } from "@/lib/generateDescription";
 export default function CityPage() {
   const [location] = useLocation();
 
-  // ✅ safer parsing
-  const [, pageType, citySlug] = location.split("/");
+  // ✅ SAFE parsing
+  const parts = location.split("/").filter(Boolean);
+  const pageType = parts[0];
+  const citySlug = parts[1];
 
-  // ❗ guard early (prevents crashes)
   if (!pageType || !citySlug) {
     return <div className="text-white text-center mt-20">Invalid URL</div>;
   }
@@ -25,7 +26,6 @@ export default function CityPage() {
     .join(" ");
 
   const { data, isLoading } = useCitySearch(formattedCity);
-
   const cityData = data?.[0];
 
   const astroData = useAstroData(
@@ -34,7 +34,7 @@ export default function CityPage() {
     new Date()
   );
 
-  // ✅ loading states
+  // ✅ Loading states FIRST (important for hooks stability)
   if (isLoading) {
     return <div className="text-white text-center mt-20">Loading...</div>;
   }
@@ -47,7 +47,8 @@ export default function CityPage() {
     return <div className="text-white text-center mt-20">Loading...</div>;
   }
 
-  // ✅ titles
+  // ✅ Now it's SAFE to compute everything
+
   let title = "";
 
   if (pageType === "sunset") {
@@ -60,18 +61,29 @@ export default function CityPage() {
     title = `${cityData.name} Astronomical Data`;
   }
 
-  // ✅ SAFE description (fallback included)
-  const description =
-    generateDescription(
+  // ✅ SAFE description (no crashes possible)
+  let description = "";
+
+  try {
+    description = generateDescription(
       cityData.name,
       cityData.country || "",
       pageType
-    ) || `Sunset and moon information for ${cityData.name}.`;
+    );
+  } catch {
+    description = `Sunset and moon information for ${cityData.name}.`;
+  }
+
+  if (!description) {
+    description = `Sunset and moon information for ${cityData.name}.`;
+  }
 
   const canonicalUrl = `https://sunsetmoon.today/${pageType}/${citySlug}`;
 
-  // ✅ SEO handling
+  // ✅ STABLE useEffect (no conditional hook issues)
   useEffect(() => {
+    if (!title || !description || !canonicalUrl) return;
+
     document.title = title;
 
     let meta = document.querySelector("meta[name='description']");
@@ -99,19 +111,19 @@ export default function CityPage() {
       <p className="text-sm text-white/60 text-center">
         Part of{" "}
         <a
-          href={`/country/${cityData?.country?.toLowerCase().replace(/ /g, "-")}`}
+          href={`/country/${cityData.country?.toLowerCase().replace(/ /g, "-")}`}
           className="hover:underline"
         >
-          {cityData?.country}
+          {cityData.country}
         </a>
       </p>
 
-      {/* ✅ SEO TEXT (guaranteed non-empty) */}
+      {/* ✅ SEO TEXT */}
       <p className="text-white/70 max-w-2xl text-center leading-relaxed">
         {description}
       </p>
 
-      {/* ✅ DATA BLOCK */}
+      {/* ✅ DATA */}
       <p className="text-white/60 text-center">
         Today in {cityData.name}: Sunset at{" "}
         {astroData.sun.sunset.toLocaleTimeString([], {
@@ -134,21 +146,11 @@ export default function CityPage() {
       <div className="text-sm text-white/60 text-center">
         Popular sunset cities:
         <div className="flex gap-4 mt-3 justify-center flex-wrap">
-          <a href="/sunset/london" className="text-white hover:text-primary">
-            London
-          </a>
-          <a href="/sunset/paris" className="text-white hover:text-primary">
-            Paris
-          </a>
-          <a href="/sunset/new-york" className="text-white hover:text-primary">
-            New York
-          </a>
-          <a href="/sunset/tokyo" className="text-white hover:text-primary">
-            Tokyo
-          </a>
-          <a href="/sunset/los-angeles" className="text-white hover:text-primary">
-            Los Angeles
-          </a>
+          <a href="/sunset/london" className="text-white hover:text-primary">London</a>
+          <a href="/sunset/paris" className="text-white hover:text-primary">Paris</a>
+          <a href="/sunset/new-york" className="text-white hover:text-primary">New York</a>
+          <a href="/sunset/tokyo" className="text-white hover:text-primary">Tokyo</a>
+          <a href="/sunset/los-angeles" className="text-white hover:text-primary">Los Angeles</a>
         </div>
       </div>
 
