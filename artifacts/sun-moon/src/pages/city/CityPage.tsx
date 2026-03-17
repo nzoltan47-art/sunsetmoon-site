@@ -3,6 +3,8 @@ import { useCitySearch } from "@/hooks/use-location";
 import { SunDetailsCard } from "@/components/SunDetailsCard";
 import { MoonDetailsCard } from "@/components/MoonDetailsCard";
 import { useAstroData } from "@/hooks/use-astro";
+import { useEffect } from "react";
+import { generateDescription } from "@/lib/generateDescription";
 
 export default function CityPage() {
   const [location] = useLocation();
@@ -11,7 +13,6 @@ export default function CityPage() {
   const pageType = pathParts[1];
   const citySlug = pathParts[2];
 
-  // convert slug → readable city
   const city = citySlug?.split("-").join(" ");
 
   const formattedCity = city
@@ -19,19 +20,16 @@ export default function CityPage() {
     .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
     .join(" ");
 
-  // city search
   const { data, isLoading } = useCitySearch(formattedCity || "");
 
   const cityData = data?.[0];
 
-  // astro calculations
   const astroData = useAstroData(
     cityData?.latitude,
     cityData?.longitude,
     new Date(),
   );
 
-  // safe loading states
   if (!city) {
     return <div className="text-white text-center mt-20">City not found</div>;
   }
@@ -48,7 +46,6 @@ export default function CityPage() {
     return <div className="text-white text-center mt-20">Loading...</div>;
   }
 
-  // SEO titles
   let title = "";
 
   if (pageType === "sunset") {
@@ -63,16 +60,31 @@ export default function CityPage() {
     title = `Golden Hour in ${cityData.name} Today (Sunrise & Sunset Times)`;
   }
 
-  document.title = title;
+  const description = generateDescription(
+    cityData.name,
+    cityData.country || "",
+    pageType
+  );
 
-  const meta = document.querySelector('meta[name="description"]');
+  const canonicalUrl = `https://sunsetmoon.today/${pageType}/${citySlug}`;
 
-  if (meta) {
-    meta.setAttribute(
-      "content",
-      `Check today's sunset time, golden hour, sunrise and moon phase in ${cityData.name}.`,
-    );
-  }
+  useEffect(() => {
+    document.title = title;
+
+    let meta = document.querySelector("meta[name='description']");
+    if (meta) {
+      meta.setAttribute("content", description);
+    }
+
+    let canonical = document.querySelector("link[rel='canonical']");
+    if (!canonical) {
+      canonical = document.createElement("link");
+      canonical.setAttribute("rel", "canonical");
+      document.head.appendChild(canonical);
+    }
+
+    canonical.setAttribute("href", canonicalUrl);
+  }, [title, description, canonicalUrl]);
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center text-white gap-10 px-4">
@@ -83,30 +95,29 @@ export default function CityPage() {
       <p className="text-sm text-white/60 text-center">
         Part of{" "}
         <a
-          href={`/country/${cityData.country.toLowerCase().replace(/ /g, "-")}`}
+          href={`/country/${cityData?.country?.toLowerCase().replace(/ /g, "-")}`}
           className="hover:underline"
         >
-          {cityData.country}
+          {cityData?.country}
         </a>
       </p>
 
       <p className="text-white/70 max-w-2xl text-center leading-relaxed">
-        The sunset time in {cityData.name} today is{" "}
+        {description}
+      </p>
+
+      <p className="text-white/60 text-center">
+        Today in {cityData.name}:
+        Sunset at{" "}
         {astroData.sun.sunset.toLocaleTimeString([], {
           hour: "2-digit",
           minute: "2-digit",
-        })}
-        . Sunrise occurs at{" "}
+        })},
+        Sunrise at{" "}
         {astroData.sun.sunrise.toLocaleTimeString([], {
           hour: "2-digit",
           minute: "2-digit",
-        })}
-        and golden hour begins at{" "}
-        {astroData.sun.goldenHour.toLocaleTimeString([], {
-          hour: "2-digit",
-          minute: "2-digit",
-        })}
-        . The current moon phase is {astroData.moon.phaseName}.
+        })}.
       </p>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-4xl">
@@ -133,10 +144,7 @@ export default function CityPage() {
             Tokyo
           </a>
 
-          <a
-            href="/sunset/los-angeles"
-            className="text-white hover:text-primary"
-          >
+          <a href="/sunset/los-angeles" className="text-white hover:text-primary">
             Los Angeles
           </a>
         </div>
