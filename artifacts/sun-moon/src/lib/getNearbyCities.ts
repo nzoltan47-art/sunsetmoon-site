@@ -31,7 +31,7 @@ export function getNearbyCities(currentCity: City, limit = 6): City[] {
   // ✅ same country first
   const sameCountry = cities.filter(
     (city) =>
-      city.slug !== currentCity.slug &&
+      city.name.toLowerCase() !== currentCity.name.toLowerCase() &&
       city.country === currentCity.country
   );
 
