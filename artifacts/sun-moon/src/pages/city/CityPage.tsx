@@ -54,8 +54,8 @@ function CityContent({ cityData, pageType, citySlug }: any) {
 
   // ✅ NOW this hook is safe
   const astroData = useAstroData(
-    cityData.latitude,
-    cityData.longitude,
+    cityData.lat,
+    cityData.lon,
     today
   );
 
