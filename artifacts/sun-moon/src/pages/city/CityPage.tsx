@@ -5,6 +5,7 @@ import { SunDetailsCard } from "@/components/SunDetailsCard";
 import { MoonDetailsCard } from "@/components/MoonDetailsCard";
 import { useEffect } from "react";
 import { generateDescription } from "@/lib/generateDescription";
+import { getNearbyCities } from "@/lib/getNearbyCities";
 
 export default function CityPage() {
   const [location] = useLocation();
@@ -61,6 +62,7 @@ function CityContent({ cityData, pageType, citySlug }: any) {
   if (!astroData) {
     return <div className="text-white text-center mt-20">Loading...</div>;
   }
+  const nearbyCities = getNearbyCities(cityData, 6);
 
   let title = "";
 
@@ -122,6 +124,24 @@ function CityContent({ cityData, pageType, citySlug }: any) {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-4xl">
         <SunDetailsCard data={astroData} />
         <MoonDetailsCard data={astroData} />
+      </div>
+
+      <div className="w-full max-w-4xl mt-10">
+        <h2 className="text-xl font-semibold mb-4 text-center">
+          Nearby Cities
+        </h2>
+
+        <div className="flex flex-wrap justify-center gap-3">
+          {nearbyCities.map((city) => (
+            <a
+              key={city.slug}
+              href={`/sunset/${city.slug}`}
+              className="px-4 py-2 rounded-lg border border-white/10 bg-black/20 hover:bg-white/10 transition"
+            >
+              {city.name}
+            </a>
+          ))}
+        </div>
       </div>
 
     </div>
