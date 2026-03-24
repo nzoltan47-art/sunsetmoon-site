@@ -37,7 +37,6 @@ export default function CityPage() {
     return <div className="text-white text-center mt-20">City not found</div>;
   }
 
-  // 👇 Move astro logic into separate component
   return (
     <CityContent
       cityData={cityData}
@@ -48,11 +47,9 @@ export default function CityPage() {
 }
 
 function CityContent({ cityData, pageType, citySlug }: any) {
-  // ✅ stable date
   const today = new Date();
   today.setHours(12, 0, 0, 0);
 
-  // ✅ NOW this hook is safe
   const astroData = useAstroData(
     cityData.latitude,
     cityData.longitude,
@@ -62,6 +59,7 @@ function CityContent({ cityData, pageType, citySlug }: any) {
   if (!astroData) {
     return <div className="text-white text-center mt-20">Loading...</div>;
   }
+
   const nearbyCities = getNearbyCities(cityData, 6);
 
   let title = "";
@@ -110,22 +108,41 @@ function CityContent({ cityData, pageType, citySlug }: any) {
     canonical.setAttribute("href", canonicalUrl);
   }, [title, description, canonicalUrl]);
 
+  const countrySlug = cityData.country
+    ?.toLowerCase()
+    .replace(/ /g, "-");
+
   return (
     <div className="min-h-screen flex flex-col items-center justify-center text-white gap-10 px-4">
 
+      {/* ✅ TITLE */}
       <h1 className="text-4xl font-bold text-center capitalize">
         {pageType.replace("-", " ")} in {cityData.name} Today
       </h1>
 
+      {/* ✅ COUNTRY LINK (STEP 4) */}
+      <p className="text-sm text-white/60 text-center">
+        Part of{" "}
+        <a
+          href={`/country/${countrySlug}`}
+          className="hover:underline"
+        >
+          {cityData.country}
+        </a>
+      </p>
+
+      {/* ✅ SEO TEXT */}
       <p className="text-white/70 max-w-2xl text-center">
         {description}
       </p>
 
+      {/* ✅ CARDS */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-4xl">
         <SunDetailsCard data={astroData} />
         <MoonDetailsCard data={astroData} />
       </div>
 
+      {/* ✅ NEARBY CITIES */}
       <div className="w-full max-w-4xl mt-10">
         <h2 className="text-xl font-semibold mb-4 text-center">
           Nearby Cities

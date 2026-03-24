@@ -11,6 +11,7 @@ import About from "@/pages/About";
 import Privacy from "@/pages/Privacy";
 import Contact from "@/pages/Contact";
 import Terms from "@/pages/Terms";
+import CountryPage from "@/pages/country/CountryPage";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -31,6 +32,7 @@ function Router() {
       <Route path="/golden-hour/:city" component={CityPage} />
 
       <Route path="/country/:country" component={Country} />
+      <Route path="/country/:country" component={CountryPage} />
 
       <Route path="/cities" component={Cities} />
       <Route path="/about" component={About} />
