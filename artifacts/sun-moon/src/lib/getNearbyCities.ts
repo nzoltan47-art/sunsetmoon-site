@@ -3,12 +3,12 @@ import { cities } from "@/lib/cities";
 type City = {
   name: string;
   slug: string;
-  latitude: number;
-  longitude: number;
+  lat: number;
+  lon: number;
   country: string;
 };
 
-// Haversine formula (distance in km)
+// Haversine formula
 function getDistance(lat1: number, lon1: number, lat2: number, lon2: number) {
   const R = 6371;
 
@@ -27,19 +27,24 @@ function getDistance(lat1: number, lon1: number, lat2: number, lon2: number) {
   return R * c;
 }
 
-export function getNearbyCities(
-  currentCity: City,
-  limit = 6
-): City[] {
-  return cities
-    .filter((city) => city.slug !== currentCity.slug)
+export function getNearbyCities(currentCity: City, limit = 6): City[] {
+  // ✅ same country first
+  const sameCountry = cities.filter(
+    (city) =>
+      city.slug !== currentCity.slug &&
+      city.country === currentCity.country
+  );
+
+  const pool = sameCountry.length >= limit ? sameCountry : cities;
+
+  return pool
     .map((city) => ({
       ...city,
       distance: getDistance(
-        currentCity.latitude,
-        currentCity.longitude,
-        city.latitude,
-        city.longitude
+        currentCity.lat,
+        currentCity.lon,
+        city.lat,
+        city.lon
       ),
     }))
     .sort((a, b) => a.distance - b.distance)
