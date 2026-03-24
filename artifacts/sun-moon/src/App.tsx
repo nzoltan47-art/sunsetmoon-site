@@ -31,7 +31,6 @@ function Router() {
       <Route path="/moon/:city" component={CityPage} />
       <Route path="/golden-hour/:city" component={CityPage} />
 
-      <Route path="/country/:country" component={Country} />
       <Route path="/country/:country" component={CountryPage} />
 
       <Route path="/cities" component={Cities} />

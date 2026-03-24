@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useGeolocation, AppLocation } from "@/hooks/use-location";
+import { useGeolocation } from "@/hooks/use-location";
 import { useAstroData } from "@/hooks/use-astro";
 import { SkyBackground } from "@/components/SkyBackground";
 import { LocationSearch } from "@/components/LocationSearch";
@@ -15,6 +15,7 @@ import {
   ChevronRight,
 } from "lucide-react";
 import { GlassButton } from "@/components/ui/glass-button";
+import { getTopCountries } from "@/lib/getTopCountries";
 
 export default function Home() {
   const {
@@ -24,13 +25,17 @@ export default function Home() {
     requestLocation,
     updateLocation,
   } = useGeolocation();
+
   const [selectedDate, setSelectedDate] = useState<Date>(new Date());
 
   const astroData = useAstroData(
     location?.latitude,
     location?.longitude,
-    selectedDate,
+    selectedDate
   );
+
+  // ✅ NEW: countries list
+  const countries = getTopCountries(12);
 
   const handlePrevDay = () => {
     const d = new Date(selectedDate);
@@ -52,10 +57,9 @@ export default function Home() {
 
   return (
     <div className="min-h-screen w-full relative flex flex-col">
-      {/* Background handles its own state internally if we have astro data, else default to night */}
       <SkyBackground phase={astroData?.currentPhase || "night"} />
 
-      {/* Header / Nav */}
+      {/* HEADER */}
       <header className="w-full p-4 sm:p-6 lg:p-8 flex flex-col md:flex-row justify-between items-center gap-4 z-10 relative">
         <div className="flex items-center space-x-3">
           <div className="w-10 h-10 rounded-xl bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center overflow-hidden">
@@ -82,6 +86,7 @@ export default function Home() {
           <GlassButton variant="ghost" size="icon" onClick={handlePrevDay}>
             <ChevronLeft className="w-5 h-5" />
           </GlassButton>
+
           <div
             className="px-4 py-2 flex items-center justify-center min-w-[180px] cursor-pointer hover:bg-white/5 rounded-xl transition-colors"
             onClick={handleToday}
@@ -91,51 +96,55 @@ export default function Home() {
               {isToday ? "Today" : formatDate(selectedDate)}
             </span>
           </div>
+
           <GlassButton variant="ghost" size="icon" onClick={handleNextDay}>
             <ChevronRight className="w-5 h-5" />
           </GlassButton>
         </div>
       </header>
 
-      {/* Main Content Area */}
+      {/* MAIN */}
       <main className="flex-1 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12 flex flex-col z-10 relative">
-        {/* Loading / Empty States */}
+
+        {/* LOADING */}
         {!location && geoLoading && (
           <div className="flex-1 flex flex-col items-center justify-center animate-pulse">
-            <Compass
-              className="w-16 h-16 text-white/50 mb-4 animate-spin-slow"
-              style={{ animationDuration: "4s" }}
-            />
+            <Compass className="w-16 h-16 text-white/50 mb-4 animate-spin-slow" />
             <p className="text-white/70 text-lg font-display tracking-widest">
               Locating your position...
             </p>
           </div>
         )}
 
+        {/* EMPTY */}
         {!location && !geoLoading && (
           <div className="flex-1 flex flex-col items-center justify-center max-w-md mx-auto text-center">
-            <div className="w-24 h-24 bg-white/5 rounded-full flex items-center justify-center mb-6 border border-white/10 shadow-[0_0_50px_rgba(255,255,255,0.05)]">
+            <div className="w-24 h-24 bg-white/5 rounded-full flex items-center justify-center mb-6 border border-white/10">
               <MapPin className="w-10 h-10 text-white/50" />
             </div>
+
             <h2 className="text-3xl font-display text-white mb-4">
               Where are you?
             </h2>
+
             <p className="text-white/60 mb-8 leading-relaxed">
               {geoError ||
-                "To calculate accurate celestial phases and times, we need your location. Please search for a city or enable GPS above."}
+                "To calculate accurate celestial data, we need your location."}
             </p>
+
             <GlassButton variant="primary" size="lg" onClick={requestLocation}>
               Use Current Location
             </GlassButton>
           </div>
         )}
 
-        {/* Data Dash */}
+        {/* DATA */}
         {location && astroData && (
           <div className="flex flex-col flex-1">
-            {/* Hero Section: Countdown & Current Location Info */}
+
+            {/* HERO */}
             <div className="w-full flex flex-col items-center justify-center py-8 lg:py-16">
-              <div className="flex items-center space-x-2 text-white/70 bg-black/20 backdrop-blur-md px-4 py-1.5 rounded-full border border-white/5 mb-6">
+              <div className="flex items-center space-x-2 text-white/70 bg-black/20 px-4 py-1.5 rounded-full mb-6">
                 <MapPin className="w-4 h-4 text-primary" />
                 <span className="text-sm font-medium tracking-wide">
                   {location.name}
@@ -146,45 +155,45 @@ export default function Home() {
                 <EventCountdown nextEvent={astroData.nextEvent} />
               ) : (
                 <div className="text-center p-8">
-                  <h2 className="text-4xl sm:text-5xl font-display text-white mb-4 drop-shadow-lg">
+                  <h2 className="text-4xl font-display text-white mb-4">
                     {formatDate(selectedDate)}
                   </h2>
-                  <p className="text-white/60 uppercase tracking-widest">
-                    Viewing historical/future data
-                  </p>
                 </div>
               )}
             </div>
 
-            {/* Grid layout for Details */}
+            {/* CARDS */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 mt-auto">
               <SunDetailsCard data={astroData} />
               <MoonDetailsCard data={astroData} />
             </div>
+
+            {/* CITY LINK */}
             <div className="mt-10 text-center text-white/60 text-sm">
-              <a
-                href="/cities"
-                className="underline hover:text-white transition"
-              >
+              <a href="/cities" className="underline hover:text-white">
                 Browse Sunset Times by City
               </a>
             </div>
-            <footer className="text-center text-white/50 text-sm mt-16 pb-8">
-              <div className="flex justify-center gap-6 flex-wrap">
-                <a href="/about" className="hover:text-white">
-                  About
-                </a>
-                <a href="/privacy" className="hover:text-white">
-                  Privacy
-                </a>
-                <a href="/terms" className="hover:text-white">
-                  Terms
-                </a>
-                <a href="/contact" className="hover:text-white">
-                  Contact
-                </a>
+
+            {/* ✅ NEW: COUNTRY LINKS */}
+            <div className="mt-12 text-center">
+              <h2 className="text-lg font-semibold mb-4 text-white/80">
+                Browse by Country
+              </h2>
+
+              <div className="flex flex-wrap justify-center gap-3">
+                {countries.map((country) => (
+                  <a
+                    key={country.slug}
+                    href={`/country/${country.slug}`}
+                    className="px-4 py-2 rounded-lg border border-white/10 bg-black/20 hover:bg-white/10 transition"
+                  >
+                    {country.name}
+                  </a>
+                ))}
               </div>
-            </footer>
+            </div>
+
           </div>
         )}
       </main>
