@@ -135,7 +135,7 @@ function CityContent({ cityData, pageType, citySlug }: any) {
           {nearbyCities.map((city) => (
             <a
               key={city.slug}
-              href={`/sunset/${city.slug}`}
+              href={`/${pageType}/${city.slug}`}
               className="px-4 py-2 rounded-lg border border-white/10 bg-black/20 hover:bg-white/10 transition"
             >
               {city.name}
