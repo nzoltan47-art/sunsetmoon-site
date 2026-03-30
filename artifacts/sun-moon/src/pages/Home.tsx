@@ -169,10 +169,22 @@ export default function Home() {
             </div>
 
             {/* CITY LINK */}
-            <div className="mt-10 text-center text-white/60 text-sm">
-              <a href="/cities" className="underline hover:text-white">
+            <div className="mt-10 text-center text-white/60 text-sm flex flex-col items-center gap-3">
+
+              <a
+                href="/cities"
+                className="hover:text-white transition underline"
+              >
                 Browse Sunset Times by City
               </a>
+
+              <a
+                href="/countries"
+                className="hover:text-white transition underline"
+              >
+                Browse by Country
+              </a>
+
             </div>
 
             {/* ✅ NEW: COUNTRY LINKS */}
