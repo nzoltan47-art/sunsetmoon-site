@@ -3,10 +3,18 @@ import { getTopCountries } from "@/lib/getTopCountries";
 export default function Countries() {
   const rawCountries = getTopCountries();
 
-  // ✅ normalize data (handles both string and object formats)
-  const countries = rawCountries.map((c: any) =>
-    typeof c === "string" ? c : c.country
-  );
+  // ✅ FULL SAFE NORMALIZATION
+  const countries = rawCountries
+    .map((c: any) => {
+      if (typeof c === "string") return c;
+
+      if (c && typeof c === "object" && typeof c.country === "string") {
+        return c.country;
+      }
+
+      return null; // ❗ invalid value
+    })
+    .filter((c: any): c is string => typeof c === "string");
 
   return (
     <div className="min-h-screen text-white px-4 py-16 flex flex-col items-center">
@@ -21,7 +29,7 @@ export default function Countries() {
       </p>
 
       <div className="flex flex-wrap justify-center gap-3 max-w-4xl">
-        {countries.map((country: string) => {
+        {countries.map((country) => {
           const slug = country.toLowerCase().replace(/\s+/g, "-");
 
           return (
