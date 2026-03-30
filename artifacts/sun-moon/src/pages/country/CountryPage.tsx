@@ -78,7 +78,7 @@ export default function CountryPage() {
                 Sunset Times
               </h3>
 
-              <div className="flex flex-col gap-2 items-center max-h-[600px] overflow-y-auto">
+              <div className="flex flex-col gap-2 items-center max-h-[600px] overflow-y-auto pr-2">
                 {cities.slice(0, 100).map((city) => (
                   <a
                     key={`sunset-${city.slug}`}
@@ -97,7 +97,7 @@ export default function CountryPage() {
                 Golden Hour
               </h3>
 
-              <div className="flex flex-col gap-2 items-center max-h-[600px] overflow-y-auto">
+              <div className="flex flex-col gap-2 items-center max-h-[600px] overflow-y-auto pr-2">
                 {cities.slice(0, 100).map((city) => (
                   <a
                     key={`golden-${city.slug}`}
@@ -116,7 +116,7 @@ export default function CountryPage() {
                 Moon Phases
               </h3>
 
-              <div className="flex flex-col gap-2 items-center max-h-[600px] overflow-y-auto">
+              <div className="flex flex-col gap-2 items-center max-h-[600px] overflow-y-auto pr-2">
                 {cities.slice(0, 100).map((city) => (
                   <a
                     key={`moon-${city.slug}`}
