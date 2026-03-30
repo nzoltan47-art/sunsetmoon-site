@@ -1,7 +1,12 @@
 import { getTopCountries } from "@/lib/getTopCountries";
 
 export default function Countries() {
-  const countries = getTopCountries();
+  const rawCountries = getTopCountries();
+
+  // ✅ normalize data (handles both string and object formats)
+  const countries = rawCountries.map((c: any) =>
+    typeof c === "string" ? c : c.country
+  );
 
   return (
     <div className="min-h-screen text-white px-4 py-16 flex flex-col items-center">
@@ -16,15 +21,19 @@ export default function Countries() {
       </p>
 
       <div className="flex flex-wrap justify-center gap-3 max-w-4xl">
-        {countries.map((country: string) => (
-          <a
-            key={country}
-            href={`/country/${country.toLowerCase().replace(/\s+/g, "-")}`}
-            className="px-4 py-2 rounded-lg border border-white/10 bg-black/20 hover:bg-white/10 transition"
-          >
-            {country}
-          </a>
-        ))}
+        {countries.map((country: string) => {
+          const slug = country.toLowerCase().replace(/\s+/g, "-");
+
+          return (
+            <a
+              key={slug}
+              href={`/country/${slug}`}
+              className="px-4 py-2 rounded-lg border border-white/10 bg-black/20 hover:bg-white/10 transition"
+            >
+              {country}
+            </a>
+          );
+        })}
       </div>
 
     </div>
