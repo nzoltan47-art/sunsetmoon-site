@@ -1,17 +1,23 @@
 import { cities } from "@/lib/cities";
 
-export function getTopCountries(limit = 12) {
-  const map: Record<string, number> = {};
+export function getTopCountries(): string[] {
+  const countryCount: Record<string, number> = {};
 
-  cities.forEach((city) => {
-    map[city.country] = (map[city.country] || 0) + 1;
-  });
+  for (const city of cities) {
+    if (!city.country || typeof city.country !== "string") continue;
 
-  return Object.entries(map)
+    const country = city.country.trim();
+
+    if (!countryCount[country]) {
+      countryCount[country] = 0;
+    }
+
+    countryCount[country]++;
+  }
+
+  // sort by number of cities (descending)
+  return Object.entries(countryCount)
     .sort((a, b) => b[1] - a[1])
-    .slice(0, limit)
-    .map(([country]) => ({
-      name: country,
-      slug: country.toLowerCase().replace(/ /g, "-"),
-    }));
+    .map(([country]) => country)
+    .slice(0, 50); // limit for UX
 }
