@@ -1,6 +1,6 @@
 import { useLocation } from "wouter";
-import { getCitiesByCountry } from "@/lib/getCitiesByCountry";
 import { useEffect } from "react";
+import { getCitiesByCountry } from "@/lib/getCitiesByCountry";
 
 export default function CountryPage() {
   const [location] = useLocation();
@@ -9,7 +9,7 @@ export default function CountryPage() {
   const countrySlug = parts[1];
 
   if (!countrySlug) {
-    return <div className="text-white text-center mt-20">Country not found</div>;
+    return <div className="text-white text-center mt-20">Invalid URL</div>;
   }
 
   const countryName = countrySlug
@@ -23,8 +23,10 @@ export default function CountryPage() {
     return <div className="text-white text-center mt-20">No cities found</div>;
   }
 
-  const title = `Sunset, Moon & Golden Hour Times in ${countryName}`;
-  const description = `Check sunset times, sunrise, moon phase and golden hour for cities across ${countryName}.`;
+  // SEO
+  const title = `Sunset Times in ${countryName} – Cities, Golden Hour & Moon Phases`;
+
+  const description = `Explore sunset times, sunrise, golden hour, and moon phases across cities in ${countryName}. Compare locations and plan your day with accurate astronomical data.`;
 
   const canonicalUrl = `https://sunsetmoon.today/country/${countrySlug}`;
 
@@ -45,54 +47,35 @@ export default function CountryPage() {
   }, [title, description, canonicalUrl]);
 
   return (
-    <div className="min-h-screen text-white p-10 max-w-6xl mx-auto">
+    <div className="min-h-screen text-white px-4 py-16 flex flex-col items-center">
 
-      <h1 className="text-4xl font-bold mb-6 text-center">
-        Sunset, Moon & Golden Hour Times in {countryName}
+      <h1 className="text-4xl font-bold text-center mb-6">
+        Sunset Times in {countryName}
       </h1>
 
-      <p className="text-white/70 text-center max-w-2xl mx-auto mb-10">
-        Explore sunset times, sunrise, moon phases, and golden hour across cities in {countryName}. Select a city below to view detailed astronomical data.
+      <p className="text-white/70 max-w-3xl text-center leading-relaxed mb-10">
+        Sunset times in {countryName} vary throughout the year due to seasonal daylight changes.
+        During summer, days are longer and sunsets occur later, while winter brings earlier sunsets.
+        Golden hour provides warm natural lighting, ideal for photography and outdoor activities.
+        Explore cities below to find accurate sunset, sunrise, and moon phase data.
       </p>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div className="w-full max-w-5xl">
+        <h2 className="text-xl font-semibold mb-6 text-center">
+          Cities in {countryName}
+        </h2>
 
-        {cities.map((city) => (
-          <div
-            key={city.slug}
-            className="p-6 rounded-xl border border-white/10 bg-black/20 backdrop-blur"
-          >
-            <h2 className="text-xl font-semibold mb-4">
+        <div className="flex flex-wrap justify-center gap-3">
+          {cities.slice(0, 100).map((city) => (
+            <a
+              key={city.slug}
+              href={`/sunset/${city.slug}`}
+              className="px-4 py-2 rounded-lg border border-white/10 bg-black/20 hover:bg-white/10 transition"
+            >
               {city.name}
-            </h2>
-
-            <div className="space-y-2">
-
-              <a
-                href={`/sunset/${city.slug}`}
-                className="block text-primary hover:underline"
-              >
-                Sunset Time
-              </a>
-
-              <a
-                href={`/moon/${city.slug}`}
-                className="block hover:underline"
-              >
-                Moon Phase
-              </a>
-
-              <a
-                href={`/golden-hour/${city.slug}`}
-                className="block hover:underline"
-              >
-                Golden Hour
-              </a>
-
-            </div>
-          </div>
-        ))}
-
+            </a>
+          ))}
+        </div>
       </div>
 
     </div>
