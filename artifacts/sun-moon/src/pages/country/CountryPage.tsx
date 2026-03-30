@@ -70,33 +70,66 @@ export default function CountryPage() {
         </h2>
 
         <div className="flex flex-wrap justify-center gap-3">
-          {cities.slice(0, 100).map((city) => (
-      
-              <div key={city.slug} className="flex gap-2 flex-wrap justify-center">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
 
-                <a
-                  href={`/sunset/${city.slug}`}
-                  className="px-4 py-2 rounded-lg border border-white/10 bg-black/20 hover:bg-white/10 transition"
-                >
-                  {city.name} Sunset
-                </a>
+            {/* SUNSET COLUMN */}
+            <div>
+              <h3 className="text-lg font-semibold text-center mb-4">
+                Sunset Times
+              </h3>
 
-                <a
-                  href={`/golden-hour/${city.slug}`}
-                  className="px-3 py-2 rounded-lg border border-white/10 bg-black/10 hover:bg-white/10 transition text-sm"
-                >
-                  {city.name} Golden Hour
-                </a>
-
-                <a
-                  href={`/moon/${city.slug}`}
-                  className="px-3 py-2 rounded-lg border border-white/10 bg-black/10 hover:bg-white/10 transition text-sm"
-                >
-                  {city.name} Moon Phase
-                </a>
-
+              <div className="flex flex-col gap-2 items-center max-h-[600px] overflow-y-auto">
+                {cities.slice(0, 100).map((city) => (
+                  <a
+                    key={`sunset-${city.slug}`}
+                    href={`/sunset/${city.slug}`}
+                    className="px-4 py-2 rounded-lg border border-white/10 bg-black/20 hover:bg-white/10 transition w-full text-center"
+                  >
+                    {city.name} Sunset
+                  </a>
+                ))}
               </div>
-          ))}
+            </div>
+
+            {/* GOLDEN HOUR COLUMN */}
+            <div>
+              <h3 className="text-lg font-semibold text-center mb-4">
+                Golden Hour
+              </h3>
+
+              <div className="flex flex-col gap-2 items-center max-h-[600px] overflow-y-auto">
+                {cities.slice(0, 100).map((city) => (
+                  <a
+                    key={`golden-${city.slug}`}
+                    href={`/golden-hour/${city.slug}`}
+                    className="px-4 py-2 rounded-lg border border-white/10 bg-black/10 hover:bg-white/10 transition w-full text-center"
+                  >
+                    {city.name} Golden Hour
+                  </a>
+                ))}
+              </div>
+            </div>
+
+            {/* MOON PHASE COLUMN */}
+            <div>
+              <h3 className="text-lg font-semibold text-center mb-4">
+                Moon Phases
+              </h3>
+
+              <div className="flex flex-col gap-2 items-center max-h-[600px] overflow-y-auto">
+                {cities.slice(0, 100).map((city) => (
+                  <a
+                    key={`moon-${city.slug}`}
+                    href={`/moon/${city.slug}`}
+                    className="px-4 py-2 rounded-lg border border-white/10 bg-black/10 hover:bg-white/10 transition w-full text-center"
+                  >
+                    {city.name} Moon Phase
+                  </a>
+                ))}
+              </div>
+            </div>
+
+          </div>
         </div>
       </div>
 
