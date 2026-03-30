@@ -60,20 +60,42 @@ export default function CountryPage() {
         Explore cities below to find accurate sunset, sunrise, and moon phase data.
       </p>
 
+      <p className="text-white/50 text-sm text-center max-w-2xl">
+        Click on any city to view detailed sunset times, golden hour, and moon phase information.
+      </p>
+
       <div className="w-full max-w-5xl">
         <h2 className="text-xl font-semibold mb-6 text-center">
-          Cities in {countryName}
+          Explore Cities in {countryName}
         </h2>
 
         <div className="flex flex-wrap justify-center gap-3">
           {cities.slice(0, 100).map((city) => (
-            <a
-              key={city.slug}
-              href={`/sunset/${city.slug}`}
-              className="px-4 py-2 rounded-lg border border-white/10 bg-black/20 hover:bg-white/10 transition"
-            >
-              {city.name}
-            </a>
+      
+              <div key={city.slug} className="flex gap-2 flex-wrap justify-center">
+
+                <a
+                  href={`/sunset/${city.slug}`}
+                  className="px-4 py-2 rounded-lg border border-white/10 bg-black/20 hover:bg-white/10 transition"
+                >
+                  {city.name} Sunset
+                </a>
+
+                <a
+                  href={`/golden-hour/${city.slug}`}
+                  className="px-3 py-2 rounded-lg border border-white/10 bg-black/10 hover:bg-white/10 transition text-sm"
+                >
+                  {city.name} Golden Hour
+                </a>
+
+                <a
+                  href={`/moon/${city.slug}`}
+                  className="px-3 py-2 rounded-lg border border-white/10 bg-black/10 hover:bg-white/10 transition text-sm"
+                >
+                  {city.name} Moon Phase
+                </a>
+
+              </div>
           ))}
         </div>
       </div>
