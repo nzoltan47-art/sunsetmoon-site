@@ -194,15 +194,19 @@ export default function Home() {
               </h2>
 
               <div className="flex flex-wrap justify-center gap-3">
-                {countries.map((country) => (
-                  <a
-                    key={country.slug}
-                    href={`/country/${country.slug}`}
-                    className="px-4 py-2 rounded-lg border border-white/10 bg-black/20 hover:bg-white/10 transition"
-                  >
-                    {country.name}
-                  </a>
-                ))}
+                {countries.map((country) => {
+                  const slug = country.toLowerCase().replace(/\s+/g, "-");
+
+                  return (
+                    <a
+                      key={slug}
+                      href={`/country/${slug}`}
+                      className="px-3 py-2 rounded-lg border border-white/10 bg-black/10 hover:bg-white/10 transition text-sm"
+                    >
+                      {country}
+                    </a>
+                  );
+                })}
               </div>
             </div>
 
