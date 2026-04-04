@@ -49,16 +49,22 @@ function CityContent({ cityData, pageType, citySlug }: any) {
 
   const nearbyCities = getNearbyCities(cityData, 6);
 
+  // ✅ STRONGER TITLES (IMPORTANT)
   let title = "";
+  let h1 = "";
 
   if (pageType === "sunset") {
-    title = `Sunset Time in ${cityData.name} Today`;
+    title = `Sunset Time in ${cityData.name} Today (${cityData.country})`;
+    h1 = `Sunset in ${cityData.name} Today`;
   } else if (pageType === "moon") {
-    title = `Moon Phase in ${cityData.name} Today`;
+    title = `Moon Phase in ${cityData.name} Today (${cityData.country})`;
+    h1 = `Moon Phase in ${cityData.name} Today`;
   } else if (pageType === "golden-hour") {
-    title = `Golden Hour in ${cityData.name} Today`;
+    title = `Golden Hour in ${cityData.name} Today (${cityData.country})`;
+    h1 = `Golden Hour in ${cityData.name} Today`;
   } else {
     title = `${cityData.name} Astronomical Data`;
+    h1 = `${cityData.name} Astronomical Data`;
   }
 
   let description = "";
@@ -70,11 +76,11 @@ function CityContent({ cityData, pageType, citySlug }: any) {
       pageType
     );
   } catch {
-    description = `Sunset and moon information for ${cityData.name}.`;
+    description = `Astronomical data for ${cityData.name}.`;
   }
 
   if (!description) {
-    description = `Sunset and moon information for ${cityData.name}.`;
+    description = `Astronomical data for ${cityData.name}.`;
   }
 
   const canonicalUrl = `https://sunsetmoon.today/${pageType}/${citySlug}`;
@@ -98,11 +104,12 @@ function CityContent({ cityData, pageType, citySlug }: any) {
   return (
     <div className="min-h-screen flex flex-col items-center justify-center text-white gap-10 px-4">
 
-      <h1 className="text-4xl font-bold text-center capitalize">
-        {pageType.replace("-", " ")} in {cityData.name} Today
+      {/* ✅ STRONG UNIQUE H1 */}
+      <h1 className="text-4xl font-bold text-center">
+        {h1}
       </h1>
 
-      {/* ✅ Country backlink */}
+      {/* Country backlink */}
       <p className="text-white/60 text-sm text-center">
         Part of{" "}
         <a
@@ -113,15 +120,18 @@ function CityContent({ cityData, pageType, citySlug }: any) {
         </a>
       </p>
 
+      {/* Description */}
       <p className="text-white/70 max-w-2xl text-center">
         {description}
       </p>
 
+      {/* DATA CARDS */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-4xl">
         <SunDetailsCard data={astroData} />
         <MoonDetailsCard data={astroData} />
       </div>
 
+      {/* Nearby */}
       <div className="w-full max-w-4xl mt-10">
         <h2 className="text-xl font-semibold mb-4 text-center">
           Nearby Cities

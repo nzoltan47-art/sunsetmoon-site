@@ -4,16 +4,16 @@ export function generateDescription(
   type: string
 ) {
   if (type === "sunset") {
-    return `Sunset times in ${city}, ${country} change throughout the year due to seasonal daylight variation. During summer months, daylight lasts longer and sunset occurs later in the evening, while in winter the days are shorter and sunset happens earlier. The golden hour in ${city} is especially popular among photographers, as the sun sits low on the horizon and creates warm, soft lighting conditions. Checking the sunset time today helps plan outdoor activities, photography sessions, and travel schedules.`;
-  }
-
-  if (type === "moon") {
-    return `The moon phase in ${city}, ${country} changes daily as the moon orbits the Earth. Depending on the phase, the moon may appear as a crescent, half moon, or full moon. Moonrise and moonset times vary throughout the month, making it important to check the current phase for night photography, stargazing, or planning evening activities. Observing the moon phase in ${city} can provide insights into lunar cycles and natural nighttime illumination.`;
+    return `Check today's exact sunset time in ${city}, ${country}. Sunset varies throughout the year due to seasonal daylight changes. During summer, the sun sets later, while winter brings earlier sunsets. Knowing today's sunset time in ${city} helps plan outdoor activities, travel, and photography sessions.`;
   }
 
   if (type === "golden-hour") {
-    return `Golden hour in ${city}, ${country} occurs shortly after sunrise and before sunset, when the sunlight is softer and warmer. This time of day is ideal for photography, filming, and outdoor experiences due to the low angle of the sun. Golden hour timing changes throughout the year depending on the season and geographic location. Knowing the golden hour in ${city} today can help you capture the best natural lighting conditions.`;
+    return `Discover today's golden hour in ${city}, ${country}. Golden hour occurs shortly after sunrise and before sunset, providing warm, soft lighting ideal for photography and outdoor experiences. The timing changes throughout the year, so checking today's golden hour in ${city} ensures perfect lighting conditions.`;
   }
 
-  return "";
+  if (type === "moon") {
+    return `Track the current moon phase in ${city}, ${country}. The moon changes appearance daily as it orbits Earth, from crescent to full moon. Moonrise and moonset times vary, making it important to check today's moon phase in ${city} for stargazing, night photography, and evening planning.`;
+  }
+
+  return `Astronomical data for ${city}, ${country}.`;
 }
