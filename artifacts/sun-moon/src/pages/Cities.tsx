@@ -3,8 +3,10 @@ import { cities } from "@/lib/cities";
 export default function Cities() {
   const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
 
-  // Prevent rendering all 17k cities on the page
-  const displayCities = cities.slice(0, 3000);
+  // ✅ SORT ALL CITIES (important for SEO + UX)
+  const sortedCities = [...cities].sort((a, b) =>
+    a.name.localeCompare(b.name)
+  );
 
   return (
     <div className="min-h-screen text-white p-10 max-w-6xl mx-auto">
@@ -47,7 +49,7 @@ export default function Cities() {
       {/* Alphabet sections */}
       {alphabet.map((letter) => {
 
-        const filteredCities = displayCities.filter((city) =>
+        const filteredCities = sortedCities.filter((city) =>
           city.name.toUpperCase().startsWith(letter)
         );
 
@@ -69,9 +71,13 @@ export default function Cities() {
                   className="p-6 rounded-xl border border-white/10 bg-black/20 backdrop-blur"
                 >
 
-                  <h3 className="text-xl font-semibold mb-4">
+                  <h3 className="text-xl font-semibold mb-2">
                     {city.name}
                   </h3>
+
+                  <p className="text-white/50 text-sm mb-4">
+                    {city.country}
+                  </p>
 
                   <div className="space-y-2">
 
@@ -79,21 +85,21 @@ export default function Cities() {
                       href={`/sunset/${city.slug}`}
                       className="block text-primary hover:underline"
                     >
-                      Sunset Time
-                    </a>
-
-                    <a
-                      href={`/moon/${city.slug}`}
-                      className="block hover:underline"
-                    >
-                      Moon Phase
+                      {city.name} Sunset Time
                     </a>
 
                     <a
                       href={`/golden-hour/${city.slug}`}
                       className="block hover:underline"
                     >
-                      Golden Hour
+                      {city.name} Golden Hour
+                    </a>
+
+                    <a
+                      href={`/moon/${city.slug}`}
+                      className="block hover:underline"
+                    >
+                      {city.name} Moon Phase
                     </a>
 
                   </div>
