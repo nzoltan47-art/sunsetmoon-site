@@ -2,7 +2,7 @@ import { readFileSync, writeFileSync } from "fs";
 import { resolve } from "path";
 import { find } from "geo-tz";
 
-const citiesPath = resolve(process.cwd(), "src/data/cities.json");
+const citiesPath = resolve(process.cwd(), "artifacts/sun-moon/src/data/cities.json");
 
 const cities = JSON.parse(readFileSync(citiesPath, "utf-8"));
 
