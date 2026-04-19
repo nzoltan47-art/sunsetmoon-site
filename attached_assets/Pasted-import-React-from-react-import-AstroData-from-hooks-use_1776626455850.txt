@@ -5,10 +5,9 @@ import { Sunrise, Sunset, Sun, Haze, CloudSun } from 'lucide-react';
 
 interface SunDetailsCardProps {
   data: AstroData;
-  timezone: string;
 }
 
-export function SunDetailsCard({ data, timezone }: SunDetailsCardProps) {
+export function SunDetailsCard({ data }: SunDetailsCardProps) {
   const events = [
     { label: 'Dawn', time: data.sun.dawn, icon: Haze, color: 'text-purple-400' },
     { label: 'Sunrise', time: data.sun.sunrise, icon: Sunrise, color: 'text-orange-400' },
@@ -39,7 +38,7 @@ export function SunDetailsCard({ data, timezone }: SunDetailsCardProps) {
                 <Icon className={`w-4 h-4 ${ev.color}`} />
                 <span className="text-xs sm:text-sm text-white/60 font-medium uppercase tracking-wider">{ev.label}</span>
               </div>
-              <span className="text-lg sm:text-xl text-white font-medium">{formatTime(ev.time, timezone)}</span>
+              <span className="text-lg sm:text-xl text-white font-medium">{formatTime(ev.time)}</span>
             </div>
           );
         })}
