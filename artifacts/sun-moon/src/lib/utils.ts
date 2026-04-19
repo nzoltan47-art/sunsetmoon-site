@@ -5,12 +5,13 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
-export function formatTime(date: Date | null): string {
+export function formatTime(date: Date | null, timezone?: string): string {
   if (!date || isNaN(date.getTime())) return "--:--";
   return new Intl.DateTimeFormat("en-US", {
     hour: "numeric",
     minute: "2-digit",
     hour12: true,
+    ...(timezone ? { timeZone: timezone } : {}),
   }).format(date);
 }
 

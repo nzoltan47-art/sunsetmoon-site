@@ -29,6 +29,7 @@ export interface AstroData {
   };
   currentPhase: 'night' | 'dawn' | 'sunrise' | 'day' | 'goldenHour' | 'sunset' | 'dusk';
   nextEvent: { name: string; time: Date } | null;
+  timezone: string;
 }
 
 function getPhaseName(phase: number): string {
@@ -55,7 +56,7 @@ function getCurrentSkyPhase(now: Date, times: Record<string, Date>) {
   return 'night';
 }
 
-export function useAstroData(lat: number | undefined, lng: number | undefined, date: Date = new Date()): AstroData | null {
+export function useAstroData(lat: number | undefined, lng: number | undefined, date: Date = new Date(), timezone: string = 'UTC'): AstroData | null {
   return useMemo(() => {
     if (lat === undefined || lng === undefined) return null;
 
@@ -109,7 +110,8 @@ export function useAstroData(lat: number | undefined, lng: number | undefined, d
         alwaysDown: moonTimes.alwaysDown || false,
       },
       currentPhase,
-      nextEvent
+      nextEvent,
+      timezone,
     };
-  }, [lat, lng, date]);
+  }, [lat, lng, date, timezone]);
 }
