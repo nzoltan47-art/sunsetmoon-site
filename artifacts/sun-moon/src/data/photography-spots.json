@@ -1,0 +1,1106 @@
+{
+  "tokyo": {
+    "spots": [
+      {
+        "name": "Shibuya Sky observation deck",
+        "desc": "360° rooftop view over the city grid — golden hour turns the skyline amber. Arrive 45 min before sunset to secure a west-facing spot."
+      },
+      {
+        "name": "Sumida River at Asakusa",
+        "desc": "Traditional temple district with the Skytree reflected in the river. Dawn light hits the Senso-ji gate perfectly for misty morning shots."
+      },
+      {
+        "name": "Shinjuku Gyoen garden",
+        "desc": "Manicured gardens with seasonal colour — cherry blossoms in spring, maple reds in autumn. Soft diffused light at dusk ideal for couples photography."
+      }
+    ]
+  },
+  "jakarta": {
+    "spots": [
+      {
+        "name": "Sunda Kelapa old harbour",
+        "desc": "Historic Dutch colonial port with traditional wooden schooners. Dawn light reflects gold off the water and weathered hulls."
+      },
+      {
+        "name": "Monas National Monument plaza",
+        "desc": "Open plaza with the 132m golden flame monument — dramatic silhouette photography at dusk with clear western horizon."
+      },
+      {
+        "name": "Ancol beachfront",
+        "desc": "North Jakarta's seafront promenade facing the Java Sea — unobstructed sunset views with fishing boats in the foreground."
+      }
+    ]
+  },
+  "delhi": {
+    "spots": [
+      {
+        "name": "Humayun's Tomb gardens",
+        "desc": "Mughal architecture glows warm red at golden hour. Symmetrical gardens create leading lines toward the central dome."
+      },
+      {
+        "name": "Qutub Minar at dusk",
+        "desc": "India's tallest minaret surrounded by ruins — late afternoon light carves dramatic shadows across the sandstone carvings."
+      },
+      {
+        "name": "India Gate at sunset",
+        "desc": "War memorial with open lawns and wide western sky. Long golden hour shadows stretch across the Rajpath boulevard."
+      }
+    ]
+  },
+  "mumbai": {
+    "spots": [
+      {
+        "name": "Marine Drive seafront",
+        "desc": "The Queen's Necklace — a 3km arc of art deco buildings facing the Arabian Sea. Best at dusk when street lights begin to mirror the sunset."
+      },
+      {
+        "name": "Gateway of India",
+        "desc": "Iconic colonial arch framing the harbour — shoot from the water taxi for a full frontal golden hour composition."
+      },
+      {
+        "name": "Bandra-Worli Sea Link at night",
+        "desc": "Cable-stayed bridge over the sea — blue hour gives the cables a dramatic contrast against the darkening sky."
+      }
+    ]
+  },
+  "manila": {
+    "spots": [
+      {
+        "name": "Rizal Park baywalk",
+        "desc": "Manila Bay faces due west — consistently ranked among Asia's top sunset spots. Arrive 1 hour before sunset for the full colour sequence."
+      },
+      {
+        "name": "Intramuros city walls",
+        "desc": "16th century Spanish fortifications with cannon-lined ramparts. Golden light on stone walls creates timeless travel portraits."
+      },
+      {
+        "name": "BGC rooftop bars",
+        "desc": "Bonifacio Global City's modern skyline offers elevated sunset angles over the metro from several accessible rooftop venues."
+      }
+    ]
+  },
+  "shanghai": {
+    "spots": [
+      {
+        "name": "The Bund waterfront",
+        "desc": "Colonial-era facades on the west bank face the futuristic Pudong skyline across the Huangpu River — blue hour is spectacular here."
+      },
+      {
+        "name": "Yu Garden at golden hour",
+        "desc": "Ming dynasty classical garden with zigzag bridges and pavilions. Low golden light through willow trees creates painterly compositions."
+      },
+      {
+        "name": "Oriental Pearl Tower base",
+        "desc": "Shoot upward at the pink sphere against the sky — works best at dusk when the tower lights activate against the fading blue."
+      }
+    ]
+  },
+  "sao-paulo": {
+    "spots": [
+      {
+        "name": "Ibirapuera Park lake",
+        "desc": "Sprawling urban park with the Oscar Niemeyer auditorium reflected in the central lake — sunrise mist makes for ethereal long exposures."
+      },
+      {
+        "name": "Vila Madalena street murals",
+        "desc": "Entire neighbourhood covered in vibrant graffiti art — soft overcast light eliminates harsh shadows for vivid colour photography."
+      },
+      {
+        "name": "Edificio Italia rooftop",
+        "desc": "Historic skyscraper with open-air terrace — one of the best elevated sunset viewpoints over the entire metropolitan sprawl."
+      }
+    ]
+  },
+  "seoul": {
+    "spots": [
+      {
+        "name": "Namsan Seoul Tower",
+        "desc": "Hilltop tower with 360° city views — golden hour turns the Han River gold and the city grid glows warmly below."
+      },
+      {
+        "name": "Gyeongbokgung Palace courtyard",
+        "desc": "Joseon dynasty palace with mountain backdrop — dawn light before crowds arrive gives peaceful, fog-draped compositions."
+      },
+      {
+        "name": "Banpo Bridge rainbow fountain",
+        "desc": "World's longest bridge fountain over the Han River — best photographed at dusk when the lit water arcs contrast the darkening sky."
+      }
+    ]
+  },
+  "mexico-city": {
+    "spots": [
+      {
+        "name": "Zócalo main square at dusk",
+        "desc": "One of the world's largest plazas flanked by the Metropolitan Cathedral — evening light on the baroque facade is extraordinary."
+      },
+      {
+        "name": "Chapultepec Castle hilltop",
+        "desc": "Elevated castle with panoramic city views — golden hour haze over the valley creates atmospheric wide-angle shots."
+      },
+      {
+        "name": "Coyoacán neighbourhood streets",
+        "desc": "Bohemian colonial quarter with colourful facades and cobblestones — blue hour street photography when cafes light up."
+      }
+    ]
+  },
+  "cairo": {
+    "spots": [
+      {
+        "name": "Giza Plateau at sunrise",
+        "desc": "The pyramids face east and catch the very first light of dawn — arrive before 6am for the iconic silhouette against a pink sky."
+      },
+      {
+        "name": "Al-Azhar Park hilltop",
+        "desc": "Elevated garden overlooking medieval Cairo and its minarets — sunset turns the entire Islamic city district golden."
+      },
+      {
+        "name": "Nile Corniche at dusk",
+        "desc": "Riverside promenade with feluccas on the water — the sun sets behind the west bank desert cliffs creating dramatic silhouettes."
+      }
+    ]
+  },
+  "karachi": {
+    "spots": [
+      {
+        "name": "Clifton Beach at sunset",
+        "desc": "Wide Arabian Sea beach facing southwest — vivid sunsets year-round with camel silhouettes and fishing boats in the foreground."
+      },
+      {
+        "name": "Mohatta Palace gardens",
+        "desc": "Pink Jodhpur stone palace glowing warm at golden hour — ornate Mughal-Rajput architecture with manicured lawns."
+      },
+      {
+        "name": "French Beach rocky coastline",
+        "desc": "Wild rocky shore north of the city — crashing waves and tidal pools make for dramatic long-exposure seascapes at dusk."
+      }
+    ]
+  },
+  "dhaka": {
+    "spots": [
+      {
+        "name": "Buriganga River at dawn",
+        "desc": "Ancient river with wooden ferries and riverside life — misty sunrise light creates atmospheric silhouette compositions."
+      },
+      {
+        "name": "Lalbagh Fort at golden hour",
+        "desc": "17th century Mughal fort with the unfinished mosque casting long shadows — warm brick tones intensify at dusk."
+      },
+      {
+        "name": "Hatirjheel lake boardwalk",
+        "desc": "Modern lakeside promenade in the city centre — reflections of the illuminated bridges begin at blue hour."
+      }
+    ]
+  },
+  "new-york": {
+    "spots": [
+      {
+        "name": "Brooklyn Bridge at sunrise",
+        "desc": "Cross to the Manhattan side before dawn to catch the first light hitting the Gothic towers with the skyline behind."
+      },
+      {
+        "name": "Top of the Rock observation deck",
+        "desc": "Rockefeller Center rooftop gives the classic Empire State Building framed shot — golden hour turns midtown amber."
+      },
+      {
+        "name": "DUMBO waterfront",
+        "desc": "The iconic Manhattan Bridge framed down Washington Street — blue hour with the bridge lights and reflected puddles is unmissable."
+      }
+    ]
+  },
+  "los-angeles": {
+    "spots": [
+      {
+        "name": "Griffith Observatory",
+        "desc": "Hilltop observatory with the Hollywood sign and city basin below — golden hour before sunset paints the sky in layers of orange and pink."
+      },
+      {
+        "name": "Venice Beach boardwalk",
+        "desc": "West-facing beach with Pacific horizon sunsets — silhouette photography of skaters, palms and the pier."
+      },
+      {
+        "name": "Runyon Canyon summit",
+        "desc": "Hiking trail above Hollywood with downtown LA in the distance — dawn light over the basin is misty and atmospheric."
+      }
+    ]
+  },
+  "london": {
+    "spots": [
+      {
+        "name": "Tower Bridge at blue hour",
+        "desc": "The Thames bends here giving both bridge towers in one frame — blue hour with the illuminated bridge is world-class."
+      },
+      {
+        "name": "Parliament Hill on Hampstead Heath",
+        "desc": "Elevated view south over the entire city skyline — golden hour from this vantage point is one of London's best kept secrets."
+      },
+      {
+        "name": "Greenwich Park hilltop",
+        "desc": "The Royal Observatory lawn looks north over Canary Wharf and the City — dawn light on clear days reveals the full skyline."
+      }
+    ]
+  },
+  "paris": {
+    "spots": [
+      {
+        "name": "Trocadéro plaza at golden hour",
+        "desc": "The Eiffel Tower faces east from here — morning golden hour light hits the iron lattice from the front for iconic lit compositions."
+      },
+      {
+        "name": "Montmartre Sacré-Cœur steps",
+        "desc": "Hilltop basilica with a view over the entire city — dusk from the steps as the city lights begin to flicker is breathtaking."
+      },
+      {
+        "name": "Seine riverbanks at blue hour",
+        "desc": "The Pont Alexandre III with its gilded statues and the Grand Palais beyond — blue hour reflections in the river are stunning."
+      }
+    ]
+  },
+  "istanbul": {
+    "spots": [
+      {
+        "name": "Galata Tower viewpoint",
+        "desc": "Medieval tower in the heart of the city with 360° views — golden hour over the Bosphorus and minarets from the balcony."
+      },
+      {
+        "name": "Süleymaniye Mosque courtyard",
+        "desc": "Ottoman masterpiece on a hill above the Golden Horn — dusk call to prayer with the city glowing below is unforgettable."
+      },
+      {
+        "name": "Ortaköy waterfront mosque",
+        "desc": "Neo-baroque mosque on the Bosphorus shore with the suspension bridge behind — blue hour when the bridge lights up is spectacular."
+      }
+    ]
+  },
+  "dubai": {
+    "spots": [
+      {
+        "name": "Burj Khalifa base at dusk",
+        "desc": "Shoot upward along the tapered facade as it changes colour from gold to purple — the fountains begin at sunset adding foreground interest."
+      },
+      {
+        "name": "Al Fahidi historical district",
+        "desc": "Wind-tower architecture in the old city — late afternoon light on the cream-coloured buildings before the modern skyline backdrop."
+      },
+      {
+        "name": "Desert dunes at golden hour",
+        "desc": "30 min outside the city — crescent dunes with smooth shadow lines at low sun angle make minimalist abstract compositions."
+      }
+    ]
+  },
+  "singapore": {
+    "spots": [
+      {
+        "name": "Marina Bay Sands rooftop",
+        "desc": "Iconic observation deck overlooking the bay and city skyline — golden hour from here is one of Asia's best viewpoints."
+      },
+      {
+        "name": "Gardens by the Bay at dusk",
+        "desc": "Supertree Grove with 50m vertical gardens — blue hour when the trees light up against the darkening sky is extraordinary."
+      },
+      {
+        "name": "Henderson Waves bridge",
+        "desc": "Wave-shaped pedestrian bridge in the southern ridge forest — dawn mist through the jungle canopy creates ethereal conditions."
+      }
+    ]
+  },
+  "bangkok": {
+    "spots": [
+      {
+        "name": "Wat Arun riverside temple",
+        "desc": "Temple of Dawn faces east across the Chao Phraya — shoot from the opposite bank at sunrise for the porcelain-encrusted spires lit in gold."
+      },
+      {
+        "name": "Mahanakhon Skywalk",
+        "desc": "Bangkok's highest observation deck with glass floor — sunset over the river meander and temple rooftops is exceptional."
+      },
+      {
+        "name": "Lumpini Park lake at dawn",
+        "desc": "Central city park with rowing boats and monitor lizards — early morning mist over the water before the heat rises."
+      }
+    ]
+  },
+  "hong-kong": {
+    "spots": [
+      {
+        "name": "Victoria Peak at dusk",
+        "desc": "The classic Hong Kong skyline shot — golden hour turns the harbour gold and the neon begins at blue hour. Arrive 90 min before sunset."
+      },
+      {
+        "name": "Tsim Sha Tsui waterfront promenade",
+        "desc": "Kowloon side facing the island skyline — the Symphony of Lights show begins at 8pm making blue hour doubly spectacular."
+      },
+      {
+        "name": "Lion Rock summit",
+        "desc": "Challenging hike rewarded with panoramic views over both sides of the territory — dawn from the ridge is transformative."
+      }
+    ]
+  },
+  "sydney": {
+    "spots": [
+      {
+        "name": "Mrs Macquaries Chair headland",
+        "desc": "The classic Opera House and Harbour Bridge in one frame — golden hour from this point is Sydney's most photographed view."
+      },
+      {
+        "name": "Bondi to Coogee coastal walk",
+        "desc": "Sea cliffs and rock pools facing east — sunrise over the Pacific from any of the headlands along this walk is spectacular."
+      },
+      {
+        "name": "Pyrmont Bridge at blue hour",
+        "desc": "Historic swing bridge over Darling Harbour — blue hour when the casino and hotel lights reflect in the water."
+      }
+    ]
+  },
+  "melbourne": {
+    "spots": [
+      {
+        "name": "Flinders Street Station at dusk",
+        "desc": "Victorian-era station with dome and clocks — dusk light on the yellow facade with tram trails for long exposure street photography."
+      },
+      {
+        "name": "St Kilda pier at sunset",
+        "desc": "Wooden pier extending into Port Phillip Bay facing west — dramatic cloud formations make every sunset unique here."
+      },
+      {
+        "name": "Eureka Skydeck observation",
+        "desc": "Southern hemisphere's highest observation deck — 360° golden hour views over the bay and the Dandenong Ranges."
+      }
+    ]
+  },
+  "toronto": {
+    "spots": [
+      {
+        "name": "CN Tower base at dusk",
+        "desc": "Look straight up the 553m tower as the sky transitions — blue hour when the tower lights change colour is mesmerising."
+      },
+      {
+        "name": "Distillery District cobblestones",
+        "desc": "Victorian industrial architecture with warm brick tones — golden hour in the pedestrian-only lanes creates rich street photography."
+      },
+      {
+        "name": "Toronto Islands west beach",
+        "desc": "West-facing beach with the downtown skyline as backdrop — golden hour from the water with the CN Tower silhouetted."
+      }
+    ]
+  },
+  "chicago": {
+    "spots": [
+      {
+        "name": "Cloud Gate at dawn",
+        "desc": "Millennium Park's mirrored sculpture before the crowds — dawn reflections of the skyline in the polished steel are surreal."
+      },
+      {
+        "name": "Navy Pier at sunset",
+        "desc": "Lake Michigan stretches east so the pier faces open water — turn west for the sunset behind the city skyline."
+      },
+      {
+        "name": "Chicago Riverwalk at blue hour",
+        "desc": "The river canyon of skyscrapers lit at blue hour — shoot long exposures from the lower Wacker Drive bridges."
+      }
+    ]
+  },
+  "amsterdam": {
+    "spots": [
+      {
+        "name": "Brouwersgracht canal at dawn",
+        "desc": "Quietest and most photogenic canal in the city — misty morning reflections of 17th century merchant houses before 7am."
+      },
+      {
+        "name": "A'DAM Lookout rooftop",
+        "desc": "North Amsterdam tower with 360° views over the IJ waterway and city — golden hour from the rooftop swing is iconic."
+      },
+      {
+        "name": "Keukenhof tulip fields",
+        "desc": "30 min from the city in spring — vast tulip fields at golden hour create abstract colour field compositions."
+      }
+    ]
+  },
+  "barcelona": {
+    "spots": [
+      {
+        "name": "Bunkers del Carmel hilltop",
+        "desc": "Former civil war bunkers with the best 360° panoramic view in Barcelona — golden hour over the Sagrada Família and the sea."
+      },
+      {
+        "name": "Park Güell terrace at dusk",
+        "desc": "Gaudí's mosaic terrace faces southwest over the city — arrive 2 hours before sunset to get through security in time."
+      },
+      {
+        "name": "Barceloneta beach at sunrise",
+        "desc": "East-facing Mediterranean beach with the city behind — dawn colours over the sea before the crowds arrive."
+      }
+    ]
+  },
+  "rome": {
+    "spots": [
+      {
+        "name": "Pincio Terrace in Villa Borghese",
+        "desc": "Elevated terrace with the most famous view of St Peter's Basilica — golden hour from here has inspired painters for centuries."
+      },
+      {
+        "name": "Gianicolo Hill at sunset",
+        "desc": "The highest viewpoint in Rome looking east over the entire city — the dome of St Peter's glows warm amber at dusk."
+      },
+      {
+        "name": "Ponte Sant'Angelo at blue hour",
+        "desc": "Angel-lined bridge over the Tiber with Castel Sant'Angelo behind — blue hour when the fortress lights up is unmissable."
+      }
+    ]
+  },
+  "madrid": {
+    "spots": [
+      {
+        "name": "Templo de Debod at sunset",
+        "desc": "Ancient Egyptian temple donated to Spain — the reflecting pool turns golden at sunset and the western sky is open and clear."
+      },
+      {
+        "name": "Retiro Park lake at golden hour",
+        "desc": "Rowing boats on the central lake with the Crystal Palace beyond — afternoon light filters through the mature trees perfectly."
+      },
+      {
+        "name": "Círculo de Bellas Artes rooftop",
+        "desc": "Central rooftop terrace with views over the Gran Vía — dusk cocktail hour here doubles as a photography session."
+      }
+    ]
+  },
+  "berlin": {
+    "spots": [
+      {
+        "name": "East Side Gallery at golden hour",
+        "desc": "1.3km of Berlin Wall murals along the Spree — low golden light rakes across the painted concrete for vivid colour photography."
+      },
+      {
+        "name": "Teufelsberg hilltop ruins",
+        "desc": "Cold War spy station ruins on a forested hill — dawn from the observation dome gives panoramic city views through broken glass."
+      },
+      {
+        "name": "Oberbaumbrücke at blue hour",
+        "desc": "Red brick double-decker bridge over the Spree — blue hour with the yellow U-Bahn crossing and its reflection below."
+      }
+    ]
+  },
+  "vienna": {
+    "spots": [
+      {
+        "name": "Kahlenberg hilltop",
+        "desc": "Vineyard-covered hill overlooking the entire Vienna basin and the Danube — golden hour from the wine tavern terrace is magical."
+      },
+      {
+        "name": "Schönbrunn Palace gardens",
+        "desc": "Baroque imperial gardens on a slope — the Gloriette arch at the top frames the palace and city below at golden hour."
+      },
+      {
+        "name": "Naschmarkt at dawn",
+        "desc": "Historic outdoor market with art nouveau architecture — early morning light before vendors arrive for atmospheric street photography."
+      }
+    ]
+  },
+  "prague": {
+    "spots": [
+      {
+        "name": "Charles Bridge at dawn",
+        "desc": "Medieval bridge with 30 baroque statues — arrive by 5:30am in summer for mist over the Vltava and zero crowds."
+      },
+      {
+        "name": "Letná Park terrace",
+        "desc": "Elevated riverside park with the best panoramic view of the red rooftops and the river meander — golden hour is superb."
+      },
+      {
+        "name": "Vítkov Hill memorial",
+        "desc": "Giant equestrian statue on a hill east of the city — dawn light behind the statue with the entire city below."
+      }
+    ]
+  },
+  "budapest": {
+    "spots": [
+      {
+        "name": "Fisherman's Bastion at sunrise",
+        "desc": "Neo-Gothic terraces on Castle Hill — arrive before 7am to photograph the Parliament building across the Danube in soft pink light."
+      },
+      {
+        "name": "Gellért Hill citadel",
+        "desc": "The highest point above the city — golden hour from the Liberty Statue looking down over both sides of the river."
+      },
+      {
+        "name": "Chain Bridge at blue hour",
+        "desc": "Hungary's most photographed bridge — blue hour when the lion-guarded bridge lights up with the lit Parliament beyond."
+      }
+    ]
+  },
+  "moscow": {
+    "spots": [
+      {
+        "name": "Vorobyovy Gory viewpoint",
+        "desc": "Sparrow Hills overlook gives the classic Moscow skyline shot with the university tower — golden hour in autumn with orange leaves."
+      },
+      {
+        "name": "Red Square at blue hour",
+        "desc": "St Basil's Cathedral lit against the dark sky — blue hour when the coloured onion domes glow is extraordinary."
+      },
+      {
+        "name": "Moscow City skyscrapers",
+        "desc": "Modern financial district best photographed from the Luzhniki bridge — dusk when the towers light up against the fading sky."
+      }
+    ]
+  },
+  "beijing": {
+    "spots": [
+      {
+        "name": "Jingshan Park hilltop",
+        "desc": "Coal Hill directly north of the Forbidden City — the only elevated view of the imperial palace complex. Dawn is magical."
+      },
+      {
+        "name": "Temple of Heaven at sunrise",
+        "desc": "Circular ceremonial temple in a vast park — early morning tai chi practitioners beneath ancient cypresses create timeless images."
+      },
+      {
+        "name": "The Great Wall at Mutianyu",
+        "desc": "1.5 hours from the city — golden hour on the watchtowers with forested mountains below in autumn colours."
+      }
+    ]
+  },
+  "san-francisco": {
+    "spots": [
+      {
+        "name": "Battery Spencer overlook",
+        "desc": "Marin Headlands viewpoint directly across from the Golden Gate Bridge — golden hour from the north side is the definitive shot."
+      },
+      {
+        "name": "Twin Peaks summit",
+        "desc": "Twin hilltops at the city's centre — 360° panorama of the bay, bridges and downtown at golden hour."
+      },
+      {
+        "name": "Embarcadero Ferry Building",
+        "desc": "Historic terminal on the bay facing east — dawn light over the East Bay hills with the Bay Bridge silhouetted."
+      }
+    ]
+  },
+  "miami": {
+    "spots": [
+      {
+        "name": "South Beach Art Deco district",
+        "desc": "Pastel-coloured 1930s hotels on Ocean Drive — golden hour from the beach looking west turns the facades deeply saturated."
+      },
+      {
+        "name": "Brickell Key at dusk",
+        "desc": "Island with 360° views of the downtown skyline and Biscayne Bay — blue hour reflections of the towers in the water."
+      },
+      {
+        "name": "Everglades at sunrise",
+        "desc": "45 min from the city — wide open sawgrass prairie with unobstructed horizon sunrises and wading birds in the foreground."
+      }
+    ]
+  },
+  "rio-de-janeiro": {
+    "spots": [
+      {
+        "name": "Cristo Redentor at sunrise",
+        "desc": "Take the first cog train at dawn — soft pink light on the statue before the crowds and clouds build up later in the day."
+      },
+      {
+        "name": "Arpoador rock at sunset",
+        "desc": "Natural rock headland between Ipanema and Copacabana — crowds gather here at sunset for a reason. West-facing open sea."
+      },
+      {
+        "name": "Sugarloaf Mountain cable car",
+        "desc": "Second stage at 395m gives views over the entire bay and Guanabara — golden hour before the last cable car down."
+      }
+    ]
+  },
+  "buenos-aires": {
+    "spots": [
+      {
+        "name": "La Boca Caminito street",
+        "desc": "Colourful corrugated iron houses in the old port district — overcast diffused light eliminates harsh shadows for vivid colour."
+      },
+      {
+        "name": "Puerto Madero waterfront at dusk",
+        "desc": "Modern dock district with the Woman's Bridge — blue hour when the bridge lights and glass towers reflect in the docks."
+      },
+      {
+        "name": "Palermo lakes at golden hour",
+        "desc": "Rowing lake in the vast Palermo parks — golden afternoon light through the rose garden with the city skyline behind."
+      }
+    ]
+  },
+  "lima": {
+    "spots": [
+      {
+        "name": "Miraflores cliff tops",
+        "desc": "Coastal cliffs above the Pacific facing southwest — sunset over the open ocean with paragliders silhouetted against the sky."
+      },
+      {
+        "name": "Huaca Pucllana ruins",
+        "desc": "Pre-Inca adobe pyramid in the middle of the city — golden hour on the ochre terraces is architecturally dramatic."
+      },
+      {
+        "name": "Barranco bohemian district",
+        "desc": "Colourful colonial houses on the cliff edge — the Bridge of Sighs and Pacific view at dusk is Lima's most romantic spot."
+      }
+    ]
+  },
+  "bogota": {
+    "spots": [
+      {
+        "name": "Monserrate hilltop church",
+        "desc": "3,152m summit above the city with cable car access — golden hour from the sanctuary looks out over the entire Bogotá savanna."
+      },
+      {
+        "name": "La Candelaria colonial centre",
+        "desc": "Historic downtown with colourful colonial architecture and political murals — overcast Andean light is ideal for street photography."
+      },
+      {
+        "name": "Usaquén flea market",
+        "desc": "Upscale colonial neighbourhood with cobblestone streets — golden afternoon light on the whitewashed church and market stalls."
+      }
+    ]
+  },
+  "lagos": {
+    "spots": [
+      {
+        "name": "Bar Beach Victoria Island",
+        "desc": "South-facing Atlantic beach with wide open horizon — dramatic tropical sunsets year-round with fishing pirogues in the foreground."
+      },
+      {
+        "name": "Lekki Conservation Centre canopy",
+        "desc": "Africa's longest canopy walkway over mangrove forest — dawn light through the trees with egrets below."
+      },
+      {
+        "name": "Third Mainland Bridge at dusk",
+        "desc": "Longest bridge in Africa over Lagos Lagoon — shoot from the Adeniji side for the bridge stretching into the city at blue hour."
+      }
+    ]
+  },
+  "nairobi": {
+    "spots": [
+      {
+        "name": "Nairobi National Park at dawn",
+        "desc": "The only national park bordering a capital city — lions and giraffes silhouetted against the Nairobi skyline at sunrise."
+      },
+      {
+        "name": "Karura Forest waterfall",
+        "desc": "Urban forest with hidden waterfalls — soft morning light in the bamboo groves before the city wakes up."
+      },
+      {
+        "name": "KICC rooftop observation",
+        "desc": "Tallest building in the CBD — golden hour views over the city and the Ngong Hills on the horizon to the west."
+      }
+    ]
+  },
+  "johannesburg": {
+    "spots": [
+      {
+        "name": "Constitution Hill at sunset",
+        "desc": "Former prison turned human rights museum on a hill — golden hour over the Johannesburg skyline from the ramparts."
+      },
+      {
+        "name": "Walter Sisulu Botanical Garden",
+        "desc": "Witwatersrand ridge garden with a resident pair of Verreaux's eagles — dawn light over the Magaliesberg hills to the west."
+      },
+      {
+        "name": "Soweto Orlando Towers",
+        "desc": "Twin cooling towers painted with murals — golden afternoon light on the township streetscape below from the bridge between towers."
+      }
+    ]
+  },
+  "cape-town": {
+    "spots": [
+      {
+        "name": "Signal Hill at sunset",
+        "desc": "Accessible hilltop directly above the city bowl — the sun sets over the Atlantic beyond Lion's Head for dramatic silhouettes."
+      },
+      {
+        "name": "Boulders Beach penguin colony",
+        "desc": "African penguins on a sheltered cove — dawn light with the penguins emerging from their burrows before tourists arrive."
+      },
+      {
+        "name": "Chapman's Peak drive",
+        "desc": "Cliff-hugging coastal road above the Atlantic — road curves at golden hour give leading-line compositions with the sea far below."
+      }
+    ]
+  },
+  "casablanca": {
+    "spots": [
+      {
+        "name": "Hassan II Mosque seafront",
+        "desc": "The world's largest mosque built on the Atlantic — golden hour light on the white marble with crashing waves below the terrace."
+      },
+      {
+        "name": "Corniche beachfront",
+        "desc": "North-facing Atlantic promenade — winter sunset storms create dramatic moody seascape conditions here."
+      },
+      {
+        "name": "Old Medina rooftops",
+        "desc": "Traditional neighbourhood rooftops with the minaret above — dusk call to prayer with the sea visible in the distance."
+      }
+    ]
+  },
+  "tehran": {
+    "spots": [
+      {
+        "name": "Milad Tower observation deck",
+        "desc": "Iran's tallest structure at 435m — golden hour over the Alborz mountain range to the north with the city sprawl below."
+      },
+      {
+        "name": "Darband mountain trail",
+        "desc": "Trek into the Alborz foothills north of the city — dawn light through the gorge with teahouses and waterfalls."
+      },
+      {
+        "name": "Golestan Palace courtyards",
+        "desc": "Qajar dynasty palace complex — late afternoon light on the mirrored mosaic and tile work is extraordinarily rich."
+      }
+    ]
+  },
+  "riyadh": {
+    "spots": [
+      {
+        "name": "Kingdom Tower Sky Bridge",
+        "desc": "Observation bridge at 300m through the hole in the tower — golden hour over the endless desert city grid below."
+      },
+      {
+        "name": "Diriyah mud-brick ruins",
+        "desc": "UNESCO-listed original Saudi capital in ochre mud-brick — sunset light on the ancient walls creates deeply textured photography."
+      },
+      {
+        "name": "Edge of the World escarpment",
+        "desc": "90 min from the city — sheer 300m cliffs over the Tuwaiq plateau. Golden hour here feels like the end of the earth."
+      }
+    ]
+  },
+  "kuala-lumpur": {
+    "spots": [
+      {
+        "name": "Petronas Towers at blue hour",
+        "desc": "Shoot from KLCC Park lake — blue hour when the twin towers reflect in the water and the sky transitions from orange to deep blue."
+      },
+      {
+        "name": "Batu Caves at dawn",
+        "desc": "Hindu temple in a limestone cave — early morning light streams through the cave mouth onto the golden statue below."
+      },
+      {
+        "name": "Bukit Ampang viewpoint",
+        "desc": "Hilltop east of the city — golden hour panorama over the entire KL skyline with the Petronas Towers as centrepiece."
+      }
+    ]
+  },
+  "ho-chi-minh-city": {
+    "spots": [
+      {
+        "name": "Bitexco Financial Tower Skydeck",
+        "desc": "49th floor observation deck with 360° city views — golden hour over the Saigon River as it winds through the urban grid."
+      },
+      {
+        "name": "Ben Thanh Market at dawn",
+        "desc": "Historic colonial market building — early morning light before the crowds, vendors setting up amid long shadows."
+      },
+      {
+        "name": "Saigon River at dusk",
+        "desc": "Take a water taxi to photograph the city skyline from the river — blue hour when the towers begin to light up is spectacular."
+      }
+    ]
+  },
+  "hanoi": {
+    "spots": [
+      {
+        "name": "Hoan Kiem Lake at dawn",
+        "desc": "Central lake with the red Huc Bridge and Ngoc Son temple — misty dawn before 6am with locals doing tai chi on the banks."
+      },
+      {
+        "name": "Long Bien Bridge",
+        "desc": "French colonial railway bridge — golden hour light through the iron lattice with the Red River flowing far below."
+      },
+      {
+        "name": "Old Quarter rooftops",
+        "desc": "36 ancient trade streets seen from above — late afternoon light on the tightly packed yellow colonial buildings."
+      }
+    ]
+  },
+  "taipei": {
+    "spots": [
+      {
+        "name": "Elephant Mountain at dusk",
+        "desc": "45-minute hike to the Taipei 101 shooting spot — the classic shot of the tower against a golden sky over the city."
+      },
+      {
+        "name": "Tamsui riverside at sunset",
+        "desc": "Former colonial port town at the river mouth — west-facing waterfront watching the sun set over the Taiwan Strait."
+      },
+      {
+        "name": "Jiufen tea house hillside",
+        "desc": "40 min from the city — lantern-lit hillside tea houses above the sea at dusk, the inspiration for Spirited Away."
+      }
+    ]
+  },
+  "osaka": {
+    "spots": [
+      {
+        "name": "Dotonbori canal at blue hour",
+        "desc": "Neon-lit entertainment canal — blue hour when the giant Glico running man and crab signs reflect in the water below."
+      },
+      {
+        "name": "Osaka Castle park at dawn",
+        "desc": "17th century castle keep surrounded by cherry trees — dawn mist in the moat before the gates open to the public."
+      },
+      {
+        "name": "Umeda Sky Building",
+        "desc": "Twin tower with rooftop floating garden — 360° golden hour views over the Osaka-Kobe-Kyoto urban corridor."
+      }
+    ]
+  },
+  "kyoto": {
+    "spots": [
+      {
+        "name": "Fushimi Inari shrine at dawn",
+        "desc": "The famous torii gate tunnels — arrive before 6am to photograph the vermillion gates in mist without any crowds."
+      },
+      {
+        "name": "Arashiyama bamboo grove",
+        "desc": "Towering bamboo at dawn before 7am — diffused morning light through the canopy creates an otherworldly green atmosphere."
+      },
+      {
+        "name": "Kiyomizudera temple balcony",
+        "desc": "Wooden stage over the hillside facing west — golden hour from the balcony with the pagoda and autumn maples."
+      }
+    ]
+  },
+  "kolkata": {
+    "spots": [
+      {
+        "name": "Howrah Bridge at dawn",
+        "desc": "Massive cantilever bridge over the Hooghly — dawn light with flower sellers crossing on foot and ferries below."
+      },
+      {
+        "name": "Victoria Memorial gardens",
+        "desc": "White marble palace in Maidan park — golden hour on the Mughal-Renaissance architecture with reflecting pool."
+      },
+      {
+        "name": "Princep Ghat riverside",
+        "desc": "Colonial-era ghat on the Hooghly — sunset from the arched monument with rowing boats on the river."
+      }
+    ]
+  },
+  "chennai": {
+    "spots": [
+      {
+        "name": "Marina Beach at sunrise",
+        "desc": "The world's second longest urban beach facing east — dawn over the Bay of Bengal with fishermen launching boats into the surf."
+      },
+      {
+        "name": "Kapaleeshwarar Temple gopuram",
+        "desc": "Dravidian tower covered in painted sculptures — golden afternoon light before the 6pm puja ceremony."
+      },
+      {
+        "name": "San Thome Cathedral at dusk",
+        "desc": "Neo-Gothic white cathedral on the beachfront — blue hour with the illuminated facade against the darkening sea."
+      }
+    ]
+  },
+  "bangalore": {
+    "spots": [
+      {
+        "name": "Lalbagh Botanical Garden",
+        "desc": "18th century garden with a central glass house — dawn light through the tropical trees before the morning walkers arrive."
+      },
+      {
+        "name": "Nandi Hills sunrise",
+        "desc": "60 km north of the city — ancient hilltop fort above the clouds at 1,478m. Arrive by 5:30am for the cloud sea at sunrise."
+      },
+      {
+        "name": "Cubbon Park at golden hour",
+        "desc": "Central city park with colonial-era red buildings — late afternoon light filters through the rain trees."
+      }
+    ]
+  },
+  "hyderabad": {
+    "spots": [
+      {
+        "name": "Charminar at golden hour",
+        "desc": "400-year-old mosque-minaret in the old city — golden afternoon light on the grey granite makes the structure glow warm."
+      },
+      {
+        "name": "Hussain Sagar lake at dusk",
+        "desc": "Large central lake with the 18m Buddha statue on an island — blue hour with the lit statue reflected in the water."
+      },
+      {
+        "name": "Golconda Fort at sunset",
+        "desc": "Hilltop 16th century fort with 360° panoramic views — golden hour from the Bala Hisar gate ramparts is spectacular."
+      }
+    ]
+  },
+  "lahore": {
+    "spots": [
+      {
+        "name": "Badshahi Mosque at golden hour",
+        "desc": "Mughal-era mosque with the largest courtyard in the world — late afternoon light on the red sandstone is extraordinary."
+      },
+      {
+        "name": "Lahore Fort Sheesh Mahal",
+        "desc": "Palace of mirrors inside the Mughal fort — golden afternoon light through the lattice windows creates kaleidoscopic effects."
+      },
+      {
+        "name": "Shalimar Gardens",
+        "desc": "UNESCO-listed Mughal garden with fountains and pavilions — golden hour from the upper terraces looking down the water channels."
+      }
+    ]
+  },
+  "colombo": {
+    "spots": [
+      {
+        "name": "Galle Face Green at sunset",
+        "desc": "Ocean-front promenade facing due west — Sri Lanka's most popular sunset gathering spot with kite flyers and street food."
+      },
+      {
+        "name": "Gangaramaya Temple lake",
+        "desc": "Buddhist temple on Beira Lake — golden hour with the lotus flowers, monks in orange robes and the city reflection."
+      },
+      {
+        "name": "Mount Lavinia beach",
+        "desc": "Crescent beach south of the city with the colonial hotel above — golden hour from the rocks with breaking waves."
+      }
+    ]
+  },
+  "kathmandu": {
+    "spots": [
+      {
+        "name": "Swayambhunath stupa at sunrise",
+        "desc": "Monkey Temple on a hilltop — dawn light on the golden spire with the Himalayan foothills visible on clear days."
+      },
+      {
+        "name": "Boudhanath stupa at dusk",
+        "desc": "The world's largest stupa — blue hour as the butter lamps are lit and monks circle the base in procession."
+      },
+      {
+        "name": "Nagarkot ridge at dawn",
+        "desc": "30 km east of the city — clear winter mornings reveal the full Himalayan panorama from Dhaulagiri to Everest at sunrise."
+      }
+    ]
+  },
+  "accra": {
+    "spots": [
+      {
+        "name": "Labadi Beach at sunset",
+        "desc": "West-facing Atlantic beach east of the city — vivid tropical sunsets with fishing canoes and beach volleyball silhouettes."
+      },
+      {
+        "name": "Kwame Nkrumah Mausoleum",
+        "desc": "Marble memorial in a park — golden afternoon light on the glass pyramid structure and eternal flame."
+      },
+      {
+        "name": "Jamestown lighthouse",
+        "desc": "Colonial-era lighthouse in the old fishing district — golden hour above the colourful fishing boats in the harbour below."
+      }
+    ]
+  },
+  "addis-ababa": {
+    "spots": [
+      {
+        "name": "Entoto Hill eucalyptus forest",
+        "desc": "Forested ridge above the city at 3,200m — dawn light through the eucalyptus trees with women carrying firewood."
+      },
+      {
+        "name": "National Museum gardens",
+        "desc": "Home of Lucy the fossil — late afternoon golden light on the modernist building with jacaranda trees in bloom."
+      },
+      {
+        "name": "Merkato market at dawn",
+        "desc": "Africa's largest open market — early morning light as traders set up their stalls under corrugated iron roofing."
+      }
+    ]
+  },
+  "dar-es-salaam": {
+    "spots": [
+      {
+        "name": "Coco Beach at sunset",
+        "desc": "North-facing Indian Ocean beach — golden hour from the rocky headland with dhows sailing past."
+      },
+      {
+        "name": "Kivukoni Fish Market at dawn",
+        "desc": "Historic waterfront market — sunrise as the night fishing fleet returns with their catch to the wooden dhow harbour."
+      },
+      {
+        "name": "Bongoyo Island beach",
+        "desc": "20-minute ferry from the city — uninhabited island beach facing west for unobstructed Indian Ocean sunsets."
+      }
+    ]
+  },
+  "santo-domingo": {
+    "spots": [
+      {
+        "name": "Malecón seafront",
+        "desc": "6km coastal boulevard facing west — open horizon sunsets with the city skyline silhouetted against the Caribbean sky."
+      },
+      {
+        "name": "Zona Colonial rooftops",
+        "desc": "UNESCO-listed old town with colonial architecture casting long shadows during golden hour. Warm stone tones at dusk."
+      },
+      {
+        "name": "Faro a Colón lighthouse",
+        "desc": "Brutalist cross-shaped landmark with dramatic geometry — ideal for dusk silhouette photography after dark."
+      }
+    ]
+  },
+  "havana": {
+    "spots": [
+      {
+        "name": "Malecón seawall at sunset",
+        "desc": "The iconic 8km seafront promenade facing north-west — golden hour with classic American cars and colourful facades behind."
+      },
+      {
+        "name": "El Morro fortress ramparts",
+        "desc": "16th century castle at the harbour entrance — golden hour from the lighthouse with the old city skyline across the water."
+      },
+      {
+        "name": "Plaza Vieja rooftop terraces",
+        "desc": "Colonial square surrounded by pastel buildings — late afternoon light on the facades creates saturated travel photography."
+      }
+    ]
+  },
+  "san-jose": {
+    "spots": [
+      {
+        "name": "Irazú Volcano crater",
+        "desc": "3,432m active volcano 1.5 hours from the city — dawn above the clouds with the Pacific and Caribbean both visible on clear days."
+      },
+      {
+        "name": "Central Market at dawn",
+        "desc": "Historic 19th century market building — early morning light as vendors set up tropical fruit and flower stalls."
+      },
+      {
+        "name": "La Sabana Metropolitan Park",
+        "desc": "Large city park with the art museum — golden afternoon light on the colonial building with the Talamanca mountains behind."
+      }
+    ]
+  },
+  "panama-city": {
+    "spots": [
+      {
+        "name": "Casco Viejo rooftops",
+        "desc": "UNESCO-listed colonial quarter on a peninsula — golden hour from any rooftop bar gives the old city and modern skyline in one frame."
+      },
+      {
+        "name": "Panama Canal Miraflores locks",
+        "desc": "Watch massive ships pass at golden hour — the scale and engineering create dramatic industrial photography."
+      },
+      {
+        "name": "Causeway islands at sunset",
+        "desc": "3km causeway into the Pacific Bay — golden hour looking back at the Bridge of the Americas and the city skyline."
+      }
+    ]
+  },
+  "guatemala-city": {
+    "spots": [
+      {
+        "name": "Pacaya Volcano at sunrise",
+        "desc": "90 min from the city — active lava flows at dawn with the Pacific coastal plain visible far below through the smoke."
+      },
+      {
+        "name": "La Aurora Park gardens",
+        "desc": "Central park with the zoo and museums — golden hour light on the neoclassical architecture and tropical vegetation."
+      },
+      {
+        "name": "Cerro del Baúl viewpoint",
+        "desc": "Hilltop above the city with panoramic views — golden hour over the surrounding volcanic landscape."
+      }
+    ]
+  }
+}

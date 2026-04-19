@@ -7,7 +7,6 @@ import { generateDescription } from "@/lib/generateDescription";
 import { getNearbyCities } from "@/lib/getNearbyCities";
 import { getCityBySlug } from "@/lib/getCityBySlug";
 import { formatTime } from "@/lib/utils";
-import spotsData from "@/data/photography-spots.json";
 
 export default function CityPage() {
   const [location] = useLocation();
@@ -191,27 +190,6 @@ function CityContent({ cityData, pageType, citySlug }: any) {
           ))}
         </div>
       </div>
-
-      {/* Photography Spots */}
-      {(() => {
-        const spots = (spotsData as any)[citySlug]?.spots;
-        if (!spots) return null;
-        return (
-          <div className="w-full max-w-4xl mt-4">
-            <h2 className="text-xl font-semibold mb-4 text-center">
-              Best Photography Spots near {cityData.name}
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              {spots.map((spot: any, i: number) => (
-                <div key={i} className="bg-white/5 border border-white/10 rounded-2xl p-5">
-                  <p className="text-white font-medium mb-2">{spot.name}</p>
-                  <p className="text-white/60 text-sm leading-relaxed">{spot.desc}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        );
-      })()}
 
     </div>
   );
