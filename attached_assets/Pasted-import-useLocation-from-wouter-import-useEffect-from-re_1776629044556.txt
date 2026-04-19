@@ -101,15 +101,7 @@ function CityContent({ cityData, pageType, citySlug }: any) {
     }
 
     canonical.setAttribute("href", canonicalUrl);
-
-    let robots = document.querySelector("meta[name='robots']");
-    if (!robots) {
-      robots = document.createElement("meta");
-      robots.setAttribute("name", "robots");
-      document.head.appendChild(robots);
-    }
-    robots.setAttribute("content", cityData.population < 100000 ? "noindex, follow" : "index, follow");
-  }, [title, description, canonicalUrl, cityData.population]);
+  }, [title, description, canonicalUrl]);
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center text-white gap-10 px-4">
