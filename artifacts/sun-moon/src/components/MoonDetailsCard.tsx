@@ -5,9 +5,10 @@ import { Moon, ArrowUpFromLine, ArrowDownToLine } from 'lucide-react';
 
 interface MoonDetailsCardProps {
   data: AstroData;
+  timezone: string;
 }
 
-export function MoonDetailsCard({ data }: MoonDetailsCardProps) {
+export function MoonDetailsCard({ data, timezone }: MoonDetailsCardProps) {
   const { fraction, phaseName, rise, set } = data.moon;
   
   // Create a visual representation of the moon phase
@@ -65,14 +66,14 @@ export function MoonDetailsCard({ data }: MoonDetailsCardProps) {
             <ArrowUpFromLine className="w-4 h-4 text-slate-400" />
             <span className="text-xs text-white/60 font-medium uppercase tracking-wider">Moonrise</span>
           </div>
-          <span className="text-lg text-white font-medium">{rise ? formatTime(rise) : '--:--'}</span>
+          <span className="text-lg text-white font-medium">{rise ? formatTime(rise, timezone) : '--:--'}</span>
         </div>
         <div className="bg-black/20 rounded-2xl p-4 border border-white/5 flex flex-col">
           <div className="flex items-center space-x-2 mb-1">
             <ArrowDownToLine className="w-4 h-4 text-slate-400" />
             <span className="text-xs text-white/60 font-medium uppercase tracking-wider">Moonset</span>
           </div>
-          <span className="text-lg text-white font-medium">{set ? formatTime(set) : '--:--'}</span>
+          <span className="text-lg text-white font-medium">{set ? formatTime(set, timezone) : '--:--'}</span>
         </div>
       </div>
     </div>

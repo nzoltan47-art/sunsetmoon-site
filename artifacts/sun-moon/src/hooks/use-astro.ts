@@ -44,7 +44,7 @@ function getPhaseName(phase: number): string {
   return 'Unknown';
 }
 
-function getCurrentSkyPhase(now: Date, times: Record<string, Date>) {
+function getCurrentSkyPhase(now: Date, times: SunCalc.GetTimesResult) {
   const t = now.getTime();
   if (t < times.dawn.getTime()) return 'night';
   if (t < times.sunrise.getTime()) return 'dawn';
