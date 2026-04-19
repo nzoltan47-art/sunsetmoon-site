@@ -1,27 +1,20 @@
 const fs = require("fs");
 const path = require("path");
-
 const cities = require("../src/data/cities.json");
-
 const BASE_URL = "https://sunsetmoon.today";
-
 // max URLs per sitemap (Google safe)
 const CHUNK_SIZE = 10000;
-
 function generateUrls() {
   const urls = [];
-
-  cities.forEach((city) => {
+  const filteredCities = cities.filter(city => city.population >= 100000);
+  filteredCities.forEach((city) => {
     const slug = city.slug;
-
     urls.push(`${BASE_URL}/sunset/${slug}`);
     urls.push(`${BASE_URL}/golden-hour/${slug}`);
     urls.push(`${BASE_URL}/moon/${slug}`);
   });
-
   return urls;
 }
-
 function createSitemap(urls, index) {
   const content = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
@@ -35,15 +28,12 @@ ${urls
   )
   .join("")}
 </urlset>`;
-
   const filePath = path.join(
     __dirname,
     `../public/sitemap-${index}.xml`
   );
-
   fs.writeFileSync(filePath, content);
 }
-
 function createIndex(count) {
   const content = `<?xml version="1.0" encoding="UTF-8"?>
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
@@ -56,28 +46,21 @@ ${Array.from({ length: count })
   )
   .join("")}
 </sitemapindex>`;
-
   fs.writeFileSync(
     path.join(__dirname, "../public/sitemap.xml"),
     content
   );
 }
-
 function main() {
   const urls = generateUrls();
-
   const chunks = [];
   for (let i = 0; i < urls.length; i += CHUNK_SIZE) {
     chunks.push(urls.slice(i, i + CHUNK_SIZE));
   }
-
   chunks.forEach((chunk, i) => {
     createSitemap(chunk, i + 1);
   });
-
   createIndex(chunks.length);
-
   console.log(`✅ Generated ${chunks.length} sitemaps`);
 }
-
 main();
