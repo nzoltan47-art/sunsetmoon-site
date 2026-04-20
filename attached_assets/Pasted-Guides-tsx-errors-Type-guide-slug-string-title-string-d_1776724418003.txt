@@ -1,0 +1,19 @@
+Guides.tsx errors:
+
+Type '{ guide: { slug: string; title: string; description: string; destination: string; emoji: string; }; "": any; }[]' is not assignable to type 'ReactNode'. Type '{ guide: { slug: string; title: string; description: string; destination: string; emoji: string; }; "": any; }[]' is not assignable to type 'Iterable<ReactNode>'. The types returned by '[Symbol.iterator]().next(...)' are incompatible between these types. Type 'IteratorResult<{ guide: { slug: string; title: string; description: string; destination: string; emoji: string; }; "": any; }, any>' is not assignable to type 'IteratorResult<ReactNode, any>'. Type 'IteratorYieldResult<{ guide: { slug: string; title: string; description: string; destination: string; emoji: string; }; "": any; }>' is not assignable to type 'IteratorResult<ReactNode, any>'. Type 'IteratorYieldResult<{ guide: { slug: string; title: string; description: string; destination: string; emoji: string; }; "": any; }>' is not assignable to type 'IteratorYieldResult<ReactNode>'. Type '{ guide: { slug: string; title: string; description: string; destination: string; emoji: string; }; "": any; }' is not assignable to type 'ReactNode'. - Ln 58, Col 9
+Cannot find name 'key'. - Ln 60, Col 13
+',' expected. - Ln 60, Col 23
+Cannot find name 'href'. - Ln 61, Col 13
+')' expected. - Ln 61, Col 13
+This expression is not callable. Type '{}' has no call signatures. - Ln 61, Col 18
+Property assignment expected. - Ln 61, Col 19
+Cannot find name 'guide'. Did you mean 'guides'? - Ln 61, Col 29
+',' expected. - Ln 61, Col 41
+Unexpected token. Did you mean {'>'} or &gt;? - Ln 63, Col 11
+4x Cannot find name 'guide'. Did you mean 'guides'? - Ln 65, Col 43 + Ln 66, Col 56 + Ln 69, Col 16 + Ln 72, Col 16
+Expected corresponding JSX closing tag for 'div'. - Ln 74, Col 13
+Unexpected token. Did you mean {'}'} or &rbrace;? - Ln 75, Col 11
+')' expected. - Ln 77, Col 5
+Cannot find name 'div'. - Ln 77, Col 7
+Unreachable code detected. - Ln 77, Col 7
+Expression expected. - Ln 78, Col 3
