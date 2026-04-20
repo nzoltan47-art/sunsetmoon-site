@@ -24,7 +24,7 @@ const guides = [
   },
   {
     slug: "sunset-monaco-monte-carlo",
-    title: "Sunset and Golden Hour in Monaco",
+    title: "Sunset & Golden Hour in Monaco",
     description: "The most beautiful viewpoints in Monaco for photographers — from the Prince's Palace rock to the harbour during F1 weekend.",
     destination: "Monaco",
     emoji: "🇲🇨"
@@ -40,8 +40,8 @@ const guides = [
 
 export default function Guides() {
   useEffect(() => {
-    document.title = "Photography and Golden Hour Travel Guides — Luminary";
-    const meta = document.querySelector("meta[name='description']");
+    document.title = "Photography & Golden Hour Travel Guides — Luminary";
+    let meta = document.querySelector("meta[name='description']");
     if (meta) meta.setAttribute("content", "Golden hour and sunset photography guides for travelers. Dubrovnik, Amalfi Coast, Monaco, Dominican Republic, Kyoto and more.");
   }, []);
 
@@ -53,6 +53,7 @@ export default function Guides() {
       <p className="text-white/60 max-w-2xl text-center mb-12 leading-relaxed">
         Destination guides for photographers and travelers — exactly when and where to be for the perfect shot.
       </p>
+
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-4xl">
         {guides.map((guide) => (
           <a
