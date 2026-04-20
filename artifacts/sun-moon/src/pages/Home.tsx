@@ -20,7 +20,6 @@ export default function Home() {
   const {
     location,
     loading: geoLoading,
-    error: geoError,
     requestLocation,
     updateLocation,
   } = useGeolocation();
