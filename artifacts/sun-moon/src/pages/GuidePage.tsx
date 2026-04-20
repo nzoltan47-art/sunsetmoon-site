@@ -1,15 +1,24 @@
 import { useLocation } from "wouter";
 import { useEffect } from "react";
 
-const guideContent: Record<string, {
+type Section = {
+  heading: string;
+  body: string;
+  citySlug?: string;
+  pageType?: string;
+};
+
+type Guide = {
   title: string;
   destination: string;
   country: string;
   countrySlug: string;
   intro: string;
-  sections: { heading: string; body: string; citySlug?: string; pageType?: string }[];
+  sections: Section[];
   tip: string;
-}> = {
+};
+
+const guideContent: Record<string, Guide> = {
   "golden-hour-dubrovnik-croatia": {
     title: "Golden Hour in Dubrovnik, Croatia",
     destination: "Dubrovnik",
@@ -18,8 +27,8 @@ const guideContent: Record<string, {
     intro: "Dubrovnik is one of Europe's most photogenic cities — and at golden hour, the limestone walls, terracotta rooftops and Adriatic sea turn into something extraordinary. Here's exactly where to be and when.",
     sections: [
       {
-        heading: "City walls from Srđ Hill",
-        body: "Take the cable car up Mount Srđ in the last 90 minutes before sunset. The entire old city is laid out below you — walls, rooftops, the Adriatic and the islands of Lokrum and Elaphiti. This is the shot. Face southwest for the sun dropping toward the sea with the city below.",
+        heading: "City walls from Srd Hill",
+        body: "Take the cable car up Mount Srd in the last 90 minutes before sunset. The entire old city is laid out below you — walls, rooftops, the Adriatic and the islands of Lokrum and Elaphiti. This is the shot. Face southwest for the sun dropping toward the sea with the city below.",
         citySlug: "dubrovnik",
         pageType: "golden-hour"
       },
@@ -36,7 +45,7 @@ const guideContent: Record<string, {
         pageType: "sunset"
       },
       {
-        heading: "Buža Bar cliffside",
+        heading: "Buza Bar cliffside",
         body: "Carved into the southern city walls, this open-air bar sits on rocks directly above the Adriatic. It faces southwest — making it one of the best sunset-watching spots in the city. Go for the view first, the drink second.",
         citySlug: "dubrovnik",
         pageType: "golden-hour"
@@ -44,7 +53,6 @@ const guideContent: Record<string, {
     ],
     tip: "Dubrovnik's old city is extremely crowded from 10am to 5pm. All the best photography happens before 8am and after 6pm — plan your meals and sightseeing around the midday crowds and keep the golden hours for shooting."
   },
-
   "sunset-photography-dominican-republic": {
     title: "Sunset Photography in the Dominican Republic",
     destination: "Dominican Republic",
@@ -53,33 +61,32 @@ const guideContent: Record<string, {
     intro: "The Dominican Republic faces the Caribbean to the north and the Atlantic to the east — giving you spectacular sunset and sunrise options depending on which coast you're on. Here's where the best light is.",
     sections: [
       {
-        heading: "Santo Domingo Malecón",
+        heading: "Santo Domingo Malecon",
         body: "The capital's 6km seafront boulevard faces due west over the Caribbean. There's no obstruction between you and the horizon. Golden hour hits the colonial city buildings behind you while the sea turns gold in front. Walk westward from the Columbus Park end for the best compositions.",
         citySlug: "santo-domingo",
         pageType: "sunset"
       },
       {
-        heading: "Punta Cana beach resorts",
+        heading: "Punta Cana beach at sunrise",
         body: "The east coast faces the Atlantic — which means spectacular sunrises, not sunsets. Set your alarm for 30 minutes before dawn and walk to the water's edge. The beach is empty, the light is pink and the palms are silhouetted against the sky. This is the shot most visitors miss entirely.",
         citySlug: "punta-cana",
         pageType: "sunset"
       },
       {
-        heading: "Samaná Peninsula at dusk",
-        body: "The north coast town of Samaná faces northwest — giving you both sunset over the bay and the dramatic Los Haitises mountains behind you. The wooden pier extending into the bay is ideal for leading-line compositions at golden hour.",
+        heading: "Samana Peninsula at dusk",
+        body: "The north coast town of Samana faces northwest — giving you both sunset over the bay and the dramatic Los Haitises mountains behind you. The wooden pier extending into the bay is ideal for leading-line compositions at golden hour.",
         citySlug: "samana",
         pageType: "golden-hour"
       },
       {
-        heading: "Altos de Chavón amphitheatre",
-        body: "This replica 16th century Mediterranean village sits on a cliff above the Chavón River near La Romana. The stone buildings glow warm amber at golden hour and the river far below catches the light. Arrive 1 hour before sunset for the best light on the stonework.",
+        heading: "Altos de Chavon at golden hour",
+        body: "This replica 16th century Mediterranean village sits on a cliff above the Chavon River near La Romana. The stone buildings glow warm amber at golden hour and the river far below catches the light. Arrive 1 hour before sunset for the best light on the stonework.",
         citySlug: "la-romana",
         pageType: "golden-hour"
       }
     ],
-    tip: "The Dominican Republic has two distinct seasons — dry (December to April) and wet (May to November). Dry season gives you the cleanest skies for sunset photography. During wet season, afternoon clouds can actually enhance sunsets dramatically with colour — but plan for unpredictability."
+    tip: "The Dominican Republic has two distinct seasons — dry from December to April and wet from May to November. Dry season gives you the cleanest skies for sunset photography. During wet season, afternoon clouds can actually enhance sunsets dramatically with colour — but plan for unpredictability."
   },
-
   "golden-hour-amalfi-coast-italy": {
     title: "Golden Hour on the Amalfi Coast, Italy",
     destination: "Amalfi Coast",
@@ -107,20 +114,19 @@ const guideContent: Record<string, {
       },
       {
         heading: "Furore fjord at sunrise",
-        body: "The tiny Furore fjord — a dramatic narrow inlet carved into the cliffs — faces east, making it a sunrise location. The pale rock walls reflect the pink dawn light onto the emerald water below. Arrive before 6am in summer for the full effect before the light climbs past the cliff tops.",
+        body: "The tiny Furore fjord faces east, making it a sunrise location. The pale rock walls reflect the pink dawn light onto the emerald water below. Arrive before 6am in summer for the full effect before the light climbs past the cliff tops.",
         citySlug: "amalfi",
         pageType: "sunset"
       }
     ],
-    tip: "The Amalfi Coast in July and August is overwhelmingly crowded. If you can visit in May, June or September you'll have the golden hour spots largely to yourself. The light in May and September is also lower and warmer — better for photography than the harsh summer midday sun."
+    tip: "The Amalfi Coast in July and August is overwhelmingly crowded. If you can visit in May, June or September you will have the golden hour spots largely to yourself. The light in May and September is also lower and warmer — better for photography than the harsh summer midday sun."
   },
-
   "sunset-monaco-monte-carlo": {
-    title: "Sunset & Golden Hour in Monaco",
+    title: "Sunset and Golden Hour in Monaco",
     destination: "Monaco",
     country: "Monaco",
     countrySlug: "monaco",
-    intro: "Monaco is tiny — 2km² — but it's stacked vertically between the sea and the mountains, which creates extraordinary viewpoints. The principality faces south over the Mediterranean, giving you clean western sunsets over the sea. Here's where to be.",
+    intro: "Monaco is tiny — 2km squared — but it's stacked vertically between the sea and the mountains, which creates extraordinary viewpoints. The principality faces south over the Mediterranean, giving you clean western sunsets over the sea. Here's where to be.",
     sections: [
       {
         heading: "The Rock — Prince's Palace viewpoint",
@@ -135,8 +141,8 @@ const guideContent: Record<string, {
         pageType: "golden-hour"
       },
       {
-        heading: "Tête de Chien above La Turbie",
-        body: "15 minutes above Monaco by road, the Tête de Chien ridge at 550m gives you the definitive aerial view of the entire principality — the harbour, the casino, the Rock and the sea all in one frame. Golden hour from here with Monaco below is one of the French Riviera's best photographs. Take the road from La Turbie.",
+        heading: "Tete de Chien above La Turbie",
+        body: "15 minutes above Monaco by road, the Tete de Chien ridge at 550m gives you the definitive aerial view of the entire principality — the harbour, the casino, the Rock and the sea all in one frame. Golden hour from here with Monaco below is one of the French Riviera's best photographs. Take the road from La Turbie.",
         citySlug: "monaco",
         pageType: "golden-hour"
       },
@@ -147,9 +153,8 @@ const guideContent: Record<string, {
         pageType: "sunset"
       }
     ],
-    tip: "During the Monaco Grand Prix (typically late May), accommodation books out 18 months in advance and prices are extreme. But the city is electric. If you're there for F1, the best photography windows are Thursday evening qualifying walkabout and Sunday morning before the race — the circuit is accessible and the light is perfect. Outside race weekend, Monaco is surprisingly quiet and the viewpoints are yours alone."
+    tip: "During the Monaco Grand Prix in late May, accommodation books out 18 months in advance and prices are extreme. But the city is electric. The best photography windows are Thursday evening qualifying walkabout and Sunday morning before the race — the circuit is accessible and the light is perfect. Outside race weekend, Monaco is surprisingly quiet and the viewpoints are yours alone."
   },
-
   "golden-hour-kyoto-japan": {
     title: "Golden Hour in Kyoto, Japan",
     destination: "Kyoto",
@@ -159,13 +164,13 @@ const guideContent: Record<string, {
     sections: [
       {
         heading: "Fushimi Inari torii gates at dawn",
-        body: "The thousands of vermillion torii gates forming tunnels up the mountain are Kyoto's most iconic image — but most photos show them packed with tourists. Arrive at 5:30am in summer (before 6am year-round) and you will have the lower gates almost entirely to yourself. Dawn light filters through the gates in shafts of gold. The colour of the gates against the dark forest is extraordinary in this light.",
+        body: "The thousands of vermillion torii gates forming tunnels up the mountain are Kyoto's most iconic image — but most photos show them packed with tourists. Arrive at 5:30am in summer and you will have the lower gates almost entirely to yourself. Dawn light filters through the gates in shafts of gold.",
         citySlug: "kyoto",
         pageType: "sunset"
       },
       {
         heading: "Arashiyama bamboo grove at sunrise",
-        body: "The bamboo grove is 10 minutes wide and completely magical at 6am when the soft diffused dawn light filters through the canopy. By 9am it's a traffic jam. Come at sunrise, walk through slowly, then continue to Tenryu-ji garden which opens at 8:30am — the garden's golden hour pond reflections are spectacular.",
+        body: "The bamboo grove is completely magical at 6am when the soft diffused dawn light filters through the canopy. By 9am it's a traffic jam. Come at sunrise, walk through slowly, then continue to Tenryu-ji garden which opens at 8:30am — the garden's golden hour pond reflections are spectacular.",
         citySlug: "kyoto",
         pageType: "golden-hour"
       },
@@ -177,12 +182,12 @@ const guideContent: Record<string, {
       },
       {
         heading: "Philosopher's Path in cherry blossom season",
-        body: "The canal-side path lined with cherry trees runs between Ginkaku-ji and Nanzen-ji temples. At golden hour in late March and early April, the blossoms glow pink against the low sun. Dawn here before 6:30am means soft light, reflections in the canal and almost no other people. This is arguably Japan's most beautiful 30 minutes of light.",
+        body: "The canal-side path lined with cherry trees runs between Ginkaku-ji and Nanzen-ji temples. At golden hour in late March and early April, the blossoms glow pink against the low sun. Dawn here before 6:30am means soft light, reflections in the canal and almost no other people.",
         citySlug: "kyoto",
         pageType: "golden-hour"
       }
     ],
-    tip: "Kyoto's temples enforce strict entry times and many close by 5pm — which cuts off evening golden hour access. The solution is focusing on outdoor locations for evening golden hour (Fushimi Inari, Arashiyama, Philosopher's Path) and saving temple interiors for midday. Dawn is universally unrestricted and consistently the best light of the day."
+    tip: "Kyoto's temples enforce strict entry times and many close by 5pm. The solution is focusing on outdoor locations for evening golden hour and saving temple interiors for midday. Dawn is universally unrestricted and consistently the best light of the day."
   }
 };
 
@@ -190,22 +195,20 @@ export default function GuidePage() {
   const [location] = useLocation();
   const parts = location.split("/").filter(Boolean);
   const slug = parts[1];
-
   const guide = guideContent[slug];
 
   useEffect(() => {
-    if (guide) {
-      document.title = `${guide.title} — Luminary`;
-      let meta = document.querySelector("meta[name='description']");
-      if (meta) meta.setAttribute("content", guide.intro);
-      let canonical = document.querySelector("link[rel='canonical']");
-      if (!canonical) {
-        canonical = document.createElement("link");
-        canonical.setAttribute("rel", "canonical");
-        document.head.appendChild(canonical);
-      }
-      canonical.setAttribute("href", `https://sunsetmoon.today/guide/${slug}`);
+    if (!guide) return;
+    document.title = `${guide.title} — Luminary`;
+    const meta = document.querySelector("meta[name='description']");
+    if (meta) meta.setAttribute("content", guide.intro);
+    let canonical = document.querySelector("link[rel='canonical']");
+    if (!canonical) {
+      canonical = document.createElement("link");
+      canonical.setAttribute("rel", "canonical");
+      document.head.appendChild(canonical);
     }
+    canonical.setAttribute("href", `https://sunsetmoon.today/guide/${slug}`);
   }, [slug, guide]);
 
   if (!guide) {
@@ -214,10 +217,11 @@ export default function GuidePage() {
 
   return (
     <div className="min-h-screen text-white px-4 py-16 flex flex-col items-center">
-
       <div className="text-sm text-white/40 mb-6">
-        <a href="/" className="hover:text-white">Home</a> →{" "}
-        <a href="/guides" className="hover:text-white">Guides</a> →{" "}
+        <a href="/" className="hover:text-white">Home</a>
+        {" / "}
+        <a href="/guides" className="hover:text-white">Guides</a>
+        {" / "}
         <span className="text-white/70">{guide.destination}</span>
       </div>
 
@@ -238,29 +242,29 @@ export default function GuidePage() {
             <p className="text-white/70 leading-relaxed mb-4">
               {section.body}
             </p>
-            {section.citySlug && (
-
+            {section.citySlug && section.pageType && (
+              <a
                 href={`/${section.pageType}/${section.citySlug}`}
                 className="text-sm text-white/40 hover:text-amber-300 transition underline"
               >
-                Check today's {section.pageType === "golden-hour" ? "golden hour" : "sunset"} time in {section.heading.split(" ")[0]} →
+                Check today's {section.pageType === "golden-hour" ? "golden hour" : "sunset"} time in {section.heading.split(" ")[0]}
               </a>
             )}
           </div>
         ))}
 
         <div className="bg-amber-400/10 border border-amber-400/20 rounded-2xl p-7">
-          <p className="text-amber-300 font-semibold mb-2">📸 Photographer's tip</p>
+          <p className="text-amber-300 font-semibold mb-2">Photographer's tip</p>
           <p className="text-white/70 leading-relaxed">{guide.tip}</p>
         </div>
 
         <div className="text-center">
           <p className="text-white/40 text-sm mb-4">Explore {guide.country}</p>
-
+          <a
             href={`/country/${guide.countrySlug}`}
             className="px-6 py-3 rounded-full border border-white/20 bg-white/5 hover:bg-white/10 transition text-sm text-white"
           >
-            Browse all cities in {guide.country} →
+            Browse all cities in {guide.country}
           </a>
         </div>
       </div>

@@ -1,0 +1,35 @@
+const guideContent: Record<string, Guide> = {
+  "golden-hour-dubrovnik-croatia": {
+    title: "Golden Hour in Dubrovnik, Croatia",
+    destination: "Dubrovnik",
+    country: "Croatia",
+    countrySlug: "croatia",
+    intro: "Dubrovnik is one of Europe's most photogenic cities — and at golden hour, the limestone walls, terracotta rooftops and Adriatic sea turn into something extraordinary. Here's exactly where to be and when.",
+    sections: [
+      {
+        heading: "City walls from Srd Hill",
+        body: "Take the cable car up Mount Srd in the last 90 minutes before sunset. The entire old city is laid out below you — walls, rooftops, the Adriatic and the islands of Lokrum and Elaphiti. This is the shot. Face southwest for the sun dropping toward the sea with the city below.",
+        citySlug: "dubrovnik",
+        pageType: "golden-hour"
+      },
+      {
+        heading: "Lovrijenac Fortress",
+        body: "The detached fortress west of the Pile Gate catches the last light of the day on its honey-coloured stone. Photograph from the rocks below at water level — the fortress towering above with the sun behind it creates dramatic silhouettes. Arrive 45 minutes before sunset.",
+        citySlug: "dubrovnik",
+        pageType: "sunset"
+      },
+      {
+        heading: "Old Harbour at dawn",
+        body: "Most tourists are asleep. The old harbour at dawn has the fishing boats, the Dominican monastery and the city walls in perfect stillness. The eastern orientation means first light hits the walls directly. Arrive 20 minutes before sunrise.",
+        citySlug: "dubrovnik",
+        pageType: "sunset"
+      },
+      {
+        heading: "Buza Bar cliffside",
+        body: "Carved into the southern city walls, this open-air bar sits on rocks directly above the Adriatic. It faces southwest — making it one of the best sunset-watching spots in the city. Go for the view first, the drink second.",
+        citySlug: "dubrovnik",
+        pageType: "golden-hour"
+      }
+    ],
+    tip: "Dubrovnik's old city is extremely crowded from 10am to 5pm. All the best photography happens before 8am and after 6pm — plan your meals and sightseeing around the midday crowds and keep the golden hours for shooting."
+  },
