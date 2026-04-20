@@ -1,0 +1,37 @@
+I need to update src/pages/Home.tsx to reposition the site for photographers and travelers. Make these specific changes:
+1. In the EMPTY state section (when no location is selected), replace the current h2 and paragraph with this:
+tsx<h2 className="text-3xl font-display text-white mb-3">
+  Plan the perfect shot
+</h2>
+<p className="text-white/60 mb-3 leading-relaxed">
+  Golden hour times, sunset countdowns and moon phases — for any city in the world. Built for travelers and photographers who refuse to miss the light.
+</p>
+<p className="text-white/40 text-sm mb-8">
+  Search any destination above, or use your current location.
+</p>
+2. In the DATA section, after the country links block at the bottom, add this new section:
+tsx<div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+  <div className="bg-white/5 border border-white/10 rounded-2xl p-6">
+    <p className="text-3xl mb-3">🌅</p>
+    <p className="text-white font-medium mb-2">Sunset & Golden Hour</p>
+    <p className="text-white/50 text-sm leading-relaxed">Exact times for every city. Never miss the window for that perfect travel photo.</p>
+  </div>
+  <div className="bg-white/5 border border-white/10 rounded-2xl p-6">
+    <p className="text-3xl mb-3">🌙</p>
+    <p className="text-white font-medium mb-2">Moon Phase Planner</p>
+    <p className="text-white/50 text-sm leading-relaxed">Plan night shoots and romantic evenings around the lunar cycle at your destination.</p>
+  </div>
+  <div className="bg-white/5 border border-white/10 rounded-2xl p-6">
+    <p className="text-3xl mb-3">📍</p>
+    <p className="text-white font-medium mb-2">50,000+ Cities</p>
+    <p className="text-white/50 text-sm leading-relaxed">From major capitals to hidden gems — accurate astronomical data for wherever you're headed.</p>
+  </div>
+</div>
+3. Also add this tagline subtitle directly under the LUMINARY logo h1 in the header — change the existing h1 line to include a subtitle below it:
+tsx<div>
+  <h1 className="text-xl font-display font-bold text-white tracking-widest">
+    LUMINARY
+  </h1>
+  <p className="text-white/40 text-xs tracking-wide">Golden hour planner for travelers</p>
+</div>
+Here is the current Home.tsx: [paste file]
