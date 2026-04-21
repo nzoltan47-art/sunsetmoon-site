@@ -211,20 +211,20 @@ export default function Home() {
 
             {/* FEATURE GRID */}
             <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
-              <div className="bg-black/30 backdrop-blur-sm border border-white/10 rounded-2xl p-6">
+              <div className="bg-white/5 border border-white/10 rounded-2xl p-6">
                 <p className="text-3xl mb-3">🌅</p>
                 <p className="text-white font-medium mb-2">Sunset & Golden Hour</p>
-                <p className="text-white/70 text-sm leading-relaxed">Exact times for every city. Never miss the window for that perfect travel photo.</p>
+                <p className="text-white/50 text-sm leading-relaxed">Exact times for every city. Never miss the window for that perfect travel photo.</p>
               </div>
-              <div className="bg-black/30 backdrop-blur-sm border border-white/10 rounded-2xl p-6">
+              <div className="bg-white/5 border border-white/10 rounded-2xl p-6">
                 <p className="text-3xl mb-3">🌙</p>
                 <p className="text-white font-medium mb-2">Moon Phase Planner</p>
-                <p className="text-white/70 text-sm leading-relaxed">Plan night shoots and romantic evenings around the lunar cycle at your destination.</p>
+                <p className="text-white/50 text-sm leading-relaxed">Plan night shoots and romantic evenings around the lunar cycle at your destination.</p>
               </div>
-              <div className="bg-black/30 backdrop-blur-sm border border-white/10 rounded-2xl p-6">
+              <div className="bg-white/5 border border-white/10 rounded-2xl p-6">
                 <p className="text-3xl mb-3">📍</p>
                 <p className="text-white font-medium mb-2">50,000+ Cities</p>
-                <p className="text-white/70 text-sm leading-relaxed">From major capitals to hidden gems — accurate astronomical data for wherever you're headed.</p>
+                <p className="text-white/50 text-sm leading-relaxed">From major capitals to hidden gems — accurate astronomical data for wherever you're headed.</p>
               </div>
             </div>
 
