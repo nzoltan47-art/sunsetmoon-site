@@ -171,46 +171,17 @@ export default function Home() {
             </div>
 
             {/* CITY LINK */}
-            <div className="mt-10 text-center text-sm flex flex-col items-center gap-3">
-              <a href="/cities" className="text-white bg-black/30 backdrop-blur-sm px-4 py-2 rounded-full hover:bg-black/50 transition">
+            <div className="mt-10 text-center text-white/60 text-sm flex flex-col items-center gap-3">
+              <a href="/cities" className="hover:text-white transition underline">
                 Browse Sunset Times by City
               </a>
-              <a href="/countries" className="text-white bg-black/30 backdrop-blur-sm px-4 py-2 rounded-full hover:bg-black/50 transition">
+              <a href="/countries" className="hover:text-white transition underline">
                 Browse by Country
               </a>
             </div>
 
-            {/* GUIDES STRIP */}
-            <div className="mt-16">
-              <div className="flex items-center justify-between mb-6">
-                <h2 className="text-lg font-semibold text-white">Golden Hour Travel Guides</h2>
-                <a href="/guides" className="text-sm text-amber-300 hover:text-amber-200 transition underline">
-                  View all guides
-                </a>
-              </div>
-              <div className="flex gap-4 overflow-x-auto pb-4 snap-x snap-mandatory">
-                {[
-                  { slug: "sunset-monaco-monte-carlo", title: "Sunset in Monaco", sub: "F1 weekend viewpoints", emoji: "🇲🇨" },
-                  { slug: "golden-hour-dubrovnik-croatia", title: "Golden Hour in Dubrovnik", sub: "Croatia's walled city at dusk", emoji: "🇭🇷" },
-                  { slug: "golden-hour-amalfi-coast-italy", title: "Amalfi Coast at Golden Hour", sub: "Positano, Ravello, Atrani", emoji: "🇮🇹" },
-                  { slug: "sunset-photography-dominican-republic", title: "Dominican Republic Sunsets", sub: "Caribbean coast golden hour", emoji: "🇩🇴" },
-                  { slug: "golden-hour-kyoto-japan", title: "Golden Hour in Kyoto", sub: "Temples and bamboo at dawn", emoji: "🇯🇵" },
-                ].map((guide) => (
-                  <a
-                    key={guide.slug}
-                    href={`/guide/${guide.slug}`}
-                    className="flex-none w-56 snap-start bg-black/30 backdrop-blur-sm border border-white/10 rounded-2xl p-5 hover:bg-black/50 transition"
-                  >
-                    <div className="text-3xl mb-3">{guide.emoji}</div>
-                    <p className="text-white font-medium text-sm mb-1">{guide.title}</p>
-                    <p className="text-white/50 text-xs leading-relaxed">{guide.sub}</p>
-                  </a>
-                ))}
-              </div>
-            </div>
-
             {/* FEATURE GRID */}
-            <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+            <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
               <div className="bg-white/5 border border-white/10 rounded-2xl p-6">
                 <p className="text-3xl mb-3">🌅</p>
                 <p className="text-white font-medium mb-2">Sunset & Golden Hour</p>
