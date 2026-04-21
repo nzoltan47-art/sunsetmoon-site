@@ -6,6 +6,7 @@ const BASE_URL = "https://sunsetmoon.today";
 const CHUNK_SIZE = 10000;
 function generateUrls() {
   const urls = [];
+
   const filteredCities = cities.filter(city => city.population >= 100000);
   filteredCities.forEach((city) => {
     const slug = city.slug;
@@ -13,20 +14,34 @@ function generateUrls() {
     urls.push(`${BASE_URL}/golden-hour/${slug}`);
     urls.push(`${BASE_URL}/moon/${slug}`);
   });
+
+  const guideslugs = [
+    "golden-hour-dubrovnik-croatia",
+    "sunset-photography-dominican-republic",
+    "golden-hour-amalfi-coast-italy",
+    "sunset-monaco-monte-carlo",
+    "golden-hour-kyoto-japan",
+  ];
+
+  urls.push(`${BASE_URL}/guides`);
+  guideslugs.forEach((slug) => {
+    urls.push(`${BASE_URL}/guide/${slug}`);
+  });
+
   return urls;
 }
 function createSitemap(urls, index) {
   const content = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${urls
-  .map(
-    (url) => `
+      .map(
+        (url) => `
   <url>
     <loc>${url}</loc>
     <lastmod>${new Date().toISOString()}</lastmod>
   </url>`
-  )
-  .join("")}
+      )
+      .join("")}
 </urlset>`;
   const filePath = path.join(
     __dirname,
@@ -38,13 +53,13 @@ function createIndex(count) {
   const content = `<?xml version="1.0" encoding="UTF-8"?>
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${Array.from({ length: count })
-  .map(
-    (_, i) => `
+      .map(
+        (_, i) => `
   <sitemap>
     <loc>${BASE_URL}/sitemap-${i + 1}.xml</loc>
   </sitemap>`
-  )
-  .join("")}
+      )
+      .join("")}
 </sitemapindex>`;
   fs.writeFileSync(
     path.join(__dirname, "../public/sitemap.xml"),
